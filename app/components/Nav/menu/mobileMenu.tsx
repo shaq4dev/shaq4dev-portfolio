@@ -21,7 +21,7 @@ const MobileMenu = ({
       <div
         className={`${
           toggleHam
-            ? "bg-gray-100 shadow-xl"
+            ? "bg-gray-50 shadow-xl z-20"
             : "-translate-y-[35rem] bg-purple-800"
         } flex md:hidden w-screen ${
           toggle ? "h-[34rem]" : "h-96"
@@ -38,7 +38,7 @@ const MobileMenu = ({
                 className="group capitalize flex items-center justify-between px-2 hover:bg-purple-100 py-3 cursor-pointer duration-200"
                 onClick={() => {
                   setToggleHam(!toggleHam);
-                  setToggle(!toggle);
+                  if (toggle) setToggle(!toggle);
                 }}
               >
                 <div className="font-medium">{item.label}</div>

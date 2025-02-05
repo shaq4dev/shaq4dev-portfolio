@@ -1,10 +1,8 @@
-import { proObject } from "@/lib/static";
-import Project from "./components/Projects/projects";
+import BiographySection from "./components/Bio/biography";
 
 const Landing = () => {
   return (
     <div className="px-5 md:px-16">
-      Landing
       {/* <div className="projects grid grid-cols-1 md:grid-cols-3 gap-3">
         {proObject.map((project) => (
           <Project
@@ -18,7 +16,7 @@ const Landing = () => {
         ))}
       </div> */}
       <div id="bio" className="w-full h-screen">
-        Bio
+        <BiographySection />
       </div>
       <div id="projects" className="w-full h-screen">
         Projects
