@@ -1,25 +1,14 @@
 import BiographySection from "./components/Bio/biography";
+import ProjectSection from "./components/Projects/projectsSection";
 
 const Landing = () => {
   return (
     <div className="relative px-5 md:px-16">
-      {/* <div className="projects grid grid-cols-1 md:grid-cols-3 gap-3">
-        {proObject.map((project) => (
-          <Project
-            key={project.id}
-            description={project.description}
-            url={project.url}
-            label={project.label}
-            projectType={project.projectType}
-            img={project.img}
-          />
-        ))}
-      </div> */}
       <div id="bio" className="w-full h-[60rem] md:h-[100%]">
         <BiographySection />
       </div>
       <div id="projects" className="w-full h-screen">
-        Projects
+        <ProjectSection />
       </div>
       <div id="tech-stack" className="w-full h-screen">
         Tech Stack

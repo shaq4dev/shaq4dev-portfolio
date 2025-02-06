@@ -1,12 +1,11 @@
 import Image from "next/image";
 import sb from "@/public/sb-purple.png";
 import BioBubble from "./bioBubble";
-import { FaStarHalfStroke } from "react-icons/fa6";
 import { BsStarFill } from "react-icons/bs";
 
 const BiographySection = () => {
   return (
-    <section className="flex">
+    <section className="flex md:my-16">
       {/* hero image */}
       <div className=" h-96 md:h-[35rem] w-full md:w-[40%] mt-10 md:mt-16 ">
         <div className="relative group cursor-pointer h-full">
