@@ -21,7 +21,7 @@ const DesktopMenu = ({
                   key={item.id}
                   className={`${
                     toggle ? "bg-purple-100" : ""
-                  } text-lg cursor-pointer hover:bg-purple-100 hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200`}
+                  } text-lg cursor-pointer hover:bg-purple-100 hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200 font-medium`}
                   onClick={() => setToggle(!toggle)}
                 >
                   {item.label}
@@ -51,7 +51,7 @@ const DesktopMenu = ({
               ) : (
                 <li
                   key={item.id}
-                  className="text-lg cursor-pointer hover:bg-purple-100 hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200"
+                  className="text-lg cursor-pointer hover:bg-purple-100 hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200 font-medium"
                 >
                   <Link href={item.url}>{item.label}</Link>
                 </li>

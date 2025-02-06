@@ -53,7 +53,7 @@ const BiographySection = () => {
         </h3>
 
         <p className="md:text-2xl md:mt-3 justify-start w-full hidden md:block">
-          I am a creative and detail-oriented UX/UI designer, graphic artist,
+          I am a creative and detail-oriented UX/UI designer , graphic artist ,
           and front end developer with over 8 years of experience. I am
           passionate about crafting intuitive and user-friendly digital
           experiences.
