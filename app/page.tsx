@@ -15,7 +15,7 @@ const Landing = () => {
           />
         ))}
       </div> */}
-      <div id="bio" className="w-full h-screen">
+      <div id="bio" className="w-full h-[60rem] md:h-[100%]">
         <BiographySection />
       </div>
       <div id="projects" className="w-full h-screen">
