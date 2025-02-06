@@ -69,7 +69,7 @@ export const proObject = [
     projectType: "ux",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. doloremque repellendus. Doloribus voluptas odio, enim voluptatum afasdf asdfqtgga Mollitia perferendis dolor a aliquam. ---- password: yassuh-landing-jul16",
-    technologies: ["figma"],
+    technologies: ["figma", "adobe photoshop", "illustrator"],
   },
 ];
 
@@ -77,22 +77,22 @@ export const menuObject = [
   {
     id: "bio",
     label: "bio",
-    url: "/#",
+    url: "#top",
   },
   {
     id: "projects",
     label: "projects",
-    url: "/#projects",
+    url: "#projects",
   },
   {
     id: "tech-stack",
     label: "stack",
-    url: "/#tech-stack",
+    url: "#tech-stack",
   },
   {
     id: "resume",
     label: "resumé",
-    url: "/#resume",
+    url: "#resume",
   },
   {
     id: "contact",

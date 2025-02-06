@@ -13,7 +13,9 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <>
-      <div className="h-64 px-3 py-2 relative bg-purple-100 hover:bg-purple-200 hover:bg-opacity-70 shadow-lg rounded-xl cursor-pointer duration-200">
+      <div className="h-64 px-3 py-2 relative bg-purple-100 hover:bg-purple-200 hover:bg-opacity-70 shadow-lg rounded-xl cursor-pointer duration-200 overflow-hidden">
+        <div className="absolute z-0 -top-20 -right-20 rounded-full bg-purple-900 w-80 h-80 bg-opacity-5"></div>
+        <div className="absolute z-0 -bottom-40 -left-32 rounded-full bg-fuchsia-700 w-60 h-60 bg-opacity-5"></div>
         <div className="absolute bottom-16 text-purple-900">
           <div className="font-black text-2xl pb-2 ">{label}</div>
           <div className="description text-xs py-3">{description}</div>
