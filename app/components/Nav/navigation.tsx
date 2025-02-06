@@ -29,11 +29,12 @@ const Navigation = () => {
         {/* desktop */}
 
         <DesktopMenu toggle={toggle} setToggle={setToggle} />
-        <Hamburger
+
+        {/* <Hamburger
           setToggle={setToggle}
           toggleHam={toggleHam}
           setToggleHam={setToggleHam}
-        />
+        /> */}
       </nav>
     </>
   );

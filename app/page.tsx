@@ -2,7 +2,7 @@ import BiographySection from "./components/Bio/biography";
 
 const Landing = () => {
   return (
-    <div className="px-5 md:px-16">
+    <div className="relative px-5 md:px-16">
       {/* <div className="projects grid grid-cols-1 md:grid-cols-3 gap-3">
         {proObject.map((project) => (
           <Project

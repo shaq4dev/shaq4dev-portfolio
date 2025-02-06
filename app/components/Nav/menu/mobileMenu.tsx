@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CiLinkedin } from "react-icons/ci";
 import { DiGithubBadge } from "react-icons/di";
 import { FaAngleRight } from "react-icons/fa6";
+import Hamburger from "./hamburger";
 
 const MobileMenu = ({
   toggle,
@@ -18,6 +19,11 @@ const MobileMenu = ({
   const contactItem = menuObject[4];
   return (
     <>
+      <Hamburger
+        setToggle={setToggle}
+        toggleHam={toggleHam}
+        setToggleHam={setToggleHam}
+      />
       <div
         className={`${
           toggleHam
