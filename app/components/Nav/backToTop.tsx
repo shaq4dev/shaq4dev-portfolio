@@ -23,7 +23,7 @@ const BackToTop = () => {
       href="/#top"
       className={`${
         cutOffPoint ? "hidden" : "fixed"
-      } group bottom-5 right-5 cursor-pointer`}
+      } group bottom-5 right-5 cursor-pointer z-10`}
     >
       <div className="rounded-full border-2 border-purple-500 group-hover:border-purple-700 h-11 w-11 flex items-center justify-center duration-200">
         <BsArrowUp

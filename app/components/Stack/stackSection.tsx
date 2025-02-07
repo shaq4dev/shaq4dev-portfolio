@@ -5,7 +5,7 @@ import Stack from "./Stack";
 const StackSection = () => {
   const fullstack = techStack.find((f) => f.class === "fullstack");
   const frontend = techStack.find((f) => f.class === "frontend");
-  const backend = techStack.find((f) => f.class === "backend");
+  // const backend = techStack.find((f) => f.class === "backend");
   const cms = techStack.find((f) => f.class === "cms");
   const design = techStack.find((f) => f.class === "design");
 

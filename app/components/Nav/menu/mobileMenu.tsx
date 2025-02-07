@@ -16,7 +16,7 @@ const MobileMenu = ({
   setToggle: (toggle: boolean) => void;
   setToggleHam: (toggleHam: boolean) => void;
 }) => {
-  const contactItem = menuObject[4];
+  const contactItem: any = menuObject[4];
   return (
     <>
       <Hamburger
@@ -36,7 +36,7 @@ const MobileMenu = ({
         <h2 className="font-black text-2xl md:text-2xl px-5 py-4">Menu</h2>
 
         <ul className="px-5 flex flex-col gap-4">
-          {menuObject.map((item) =>
+          {menuObject.map((item: any) =>
             item.id !== "contact" ? (
               <Link
                 href={item.url}

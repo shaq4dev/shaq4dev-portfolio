@@ -254,18 +254,18 @@ export const techStack = [
         since: 2018,
         image: photoshop,
       },
-      // {
-      //   label: "Adobe After Effects",
-      //   tech: "adobeaftereffects",
-      //   since: 2019,
-      //   image: aftereffects,
-      // },
       {
         label: "Adobe Illustrator",
         tech: "adobeillustrator",
         since: 2018,
         image: illustrator,
       },
+      // {
+      //   label: "Adobe After Effects",
+      //   tech: "adobeaftereffects",
+      //   since: 2019,
+      //   image: aftereffects,
+      // },
       // {
       //   label: "Adobe Lightroom",
       //   tech: "adobelightroom",
@@ -284,7 +284,7 @@ export const techStack = [
       //   since: 2022,
       //   image: premierepro,
       // },
-      { label: "Canva", tech: "canva", since: 2023, image: canva },
+      // { label: "Canva", tech: "canva", since: 2023, image: canva },
       // { label: "Capcut", tech: "capcut", since: 2024, image: capcut },
     ],
   },

@@ -1,8 +1,30 @@
+"use client";
+
 import { timeline } from "@/lib/auxFunctions";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
+// base variables
+const imageSize = 40;
+const baseWidth = 25;
+const trig = 510;
+
+// stack component
 const Stack = ({ label, type }: { label: string; type: any }) => {
-  const imageSize = 40;
+  // use state
+
+  const [trigger, setTrigger] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scroll = window.scrollY.valueOf();
+      if (scroll > trig) setTrigger(true);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  }, []);
   return (
     <div className="w-full">
       <h3 className="font-bold text-lg py-8 text-purple-950 capitalize">
@@ -11,20 +33,28 @@ const Stack = ({ label, type }: { label: string; type: any }) => {
 
       <ul className="flex flex-col gap-2 ">
         {type?.technology.map((i: any) => (
-          <div key={i.tech} className="md:flex items-center gap-3 hidden">
+          <div
+            key={i.tech}
+            className="group md:flex items-center gap-3 hidden cursor-pointer"
+          >
             <Image
               src={i.image}
               alt={"fs"}
               width={imageSize}
               height={imageSize}
+              className="group-hover:rotate-12 duration-500"
             />
+
             <div
               style={{
                 width: `${
-                  i.since - 2015 > 3 ? timeline(i.since) * 3 : timeline(i.since)
+                  trigger && i.since - 2015 > -1
+                    ? timeline(i.since) * 3
+                    : baseWidth //i.since gets the individual item -- timeline calculates the percentage for the individual item
                 }%`,
+                transition: `${i.since - 2015 < 7 ? "15s" : "5s"} ease-in-out`,
               }}
-              className="bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3"
+              className={`bg-gradient-to-r from-purple-500 to-fuchsia-500 group-hover:to-purple-600 group-hover:from-fuchsia-600 text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3`}
             >
               <div className="text-sm font-black">{i.label}</div>
               <div className="text-xs font-semibold">{i.since}</div>
@@ -32,20 +62,27 @@ const Stack = ({ label, type }: { label: string; type: any }) => {
           </div>
         ))}
         {type?.technology.map((i: any) => (
-          <div key={i.tech} className="flex items-center gap-3 md:hidden">
+          <div
+            key={i.tech}
+            className="group flex items-center gap-3 md:hidden cursor-pointer"
+          >
             <Image
               src={i.image}
               alt={"fs"}
               width={imageSize}
               height={imageSize}
+              className="group-hover:rotate-12 duration-500"
             />
             <div
               style={{
                 width: `${
-                  i.since - 2015 > 3 ? timeline(i.since) * 5 : timeline(i.since)
+                  trigger && i.since - 2015 > -1
+                    ? timeline(i.since) * 5
+                    : baseWidth //i.since gets the individual item -- timeline calculates the percentage for the individual item
                 }%`,
+                transition: `${i.since - 2015 < 7 ? "30s" : "5s"} ease-in-out`,
               }}
-              className="bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3"
+              className="bg-gradient-to-r from-purple-500 to-fuchsia-500 group-hover:to-purple-600 group-hover:from-fuchsia-600 text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3"
             >
               <div className="text-sm font-black">{i.label}</div>
               <div className="text-xs font-semibold">{i.since}</div>
