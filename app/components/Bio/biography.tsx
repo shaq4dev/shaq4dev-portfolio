@@ -36,7 +36,7 @@ const BiographySection = () => {
 
         <div className="mt-36 md:hidden flex flex-col">
           <p className="item-center w-full text-center text-lg">
-            I am a creative and detail-oriented{" "}
+            I am a self-taught creative and detail-oriented{" "}
             <span className="text-purple-700 font-semibold capitalize underline cursor-pointer hover:text-purple-500 duration-200">
               {" "}
               UX/UI designer

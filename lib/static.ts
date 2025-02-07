@@ -103,3 +103,62 @@ export const menuObject = [
     },
   },
 ];
+
+export const techStack = [
+  {
+    id: "0",
+    class: "fullstack",
+    technology: [
+      "nextjs",
+      "html5",
+      "css3",
+      "javascript",
+      "typescript",
+      "expo",
+      "zod",
+    ],
+  },
+  {
+    id: "1",
+    class: "frontend",
+    technology: [
+      "reactjs",
+      "tailwindcss",
+      "nativewind",
+      "react-native",
+      "shadcnui",
+    ],
+  },
+  {
+    id: "2",
+    class: "backend",
+    technology: [
+      "mongodb",
+      "mongoose",
+      "prisma",
+      "postgresql",
+      "php",
+      "firebase",
+    ],
+  },
+  {
+    id: "3",
+    class: "cms",
+    technology: ["squarespace", "wix", "wordpress", "elementorpro"],
+  },
+  {
+    id: "4",
+    class: "design",
+    technology: [
+      "figma",
+      "adobePhotoshop",
+      "adobeAfterEffects",
+      "adobeIllustrator",
+      "adobeLightRoom",
+      "adobeIndesign",
+      "adobePremierePro",
+      "canva",
+      "capcut",
+    ],
+  },
+];

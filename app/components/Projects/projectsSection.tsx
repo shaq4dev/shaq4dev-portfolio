@@ -37,8 +37,6 @@ const ProjectSection = () => {
     }
   }
 
-  console.log(show);
-
   const allQuery = proObject
     .filter((f) => f.projectType === "ux" || f.projectType === "web")
     .map((i) => i.id).length;
