@@ -1,3 +1,40 @@
+import nextjs from "@/public/brands/nextjs.png";
+import html5 from "@/public/brands/html5.png";
+import css3 from "@/public/brands/css3.png";
+import javascript from "@/public/brands/javascript.png";
+import typescript from "@/public/brands/typescript.png";
+import expo from "@/public/brands/expo.png";
+import zod from "@/public/brands/zod.png";
+
+import reactjs from "@/public/brands/react.png";
+import tailwindcss from "@/public/brands/tailwind.png";
+import nativewind from "@/public/brands/nativewind.png";
+import reactnative from "@/public/brands/reactnative.png";
+import shadcnui from "@/public/brands/shadcnui.png";
+
+import mongodb from "@/public/brands/mongodb.png";
+import mongoose from "@/public/brands/mongoose.png";
+import prisma from "@/public/brands/prisma.png";
+import postgresql from "@/public/brands/postgresql.png";
+import php from "@/public/brands/php.png";
+import firebase from "@/public/brands/firebase.png";
+
+import squarespace from "@/public/brands/squarespace.png";
+import wix from "@/public/brands/wix.png";
+import wordpress from "@/public/brands/wordpress.png";
+import elementorpro from "@/public/brands/elementorpro.png";
+
+import gimp from "@/public/brands/gimp.png";
+import figma from "@/public/brands/figma.png";
+import photoshop from "@/public/brands/photoshop.png";
+import aftereffects from "@/public/brands/afterEffects.png";
+import illustrator from "@/public/brands/illustrator.png";
+import lightroom from "@/public/brands/lightroom.png";
+import indesign from "@/public/brands/indesign.png";
+import premierepro from "@/public/brands/premierePro.png";
+import canva from "@/public/brands/canva.webp";
+import capcut from "@/public/brands/capcut.webp";
+
 export const proObject = [
   {
     id: "0",
@@ -109,56 +146,146 @@ export const techStack = [
     id: "0",
     class: "fullstack",
     technology: [
-      "nextjs",
-      "html5",
-      "css3",
-      "javascript",
-      "typescript",
-      "expo",
-      "zod",
+      { label: "NextJs", tech: "nextjs", since: 2023, image: nextjs },
+      {
+        label: "Typescript",
+        tech: "typescript",
+        since: 2023,
+        image: typescript,
+      },
+      { label: "Expo", tech: "expo", since: 2024, image: expo },
+
+      { label: "Mongo DB", tech: "mongodb", since: 2024, image: mongodb },
+      { label: "Mongoose", tech: "mongoose", since: 2024, image: mongoose },
+      { label: "Prisma", tech: "prisma", since: 2024, image: prisma },
+      {
+        label: "Postgresql",
+        tech: "postgresql",
+        since: 2024,
+        image: postgresql,
+      },
+      // { label: "Zod", tech: "zod", since: 2024, image: zod },
+      // { label: "PHP", tech: "php", since: 2024, image: php },
+      { label: "Firebase", tech: "firebase", since: 2024, image: firebase },
     ],
   },
   {
     id: "1",
     class: "frontend",
     technology: [
-      "reactjs",
-      "tailwindcss",
-      "nativewind",
-      "react-native",
-      "shadcnui",
+      { label: "HTML", tech: "html5", since: 2019, image: html5 },
+      { label: "CSS", tech: "css3", since: 2019, image: css3 },
+      {
+        label: "Javascript",
+        tech: "javascript",
+        since: 2019,
+        image: javascript,
+      },
+      { label: "Shadcn UI", tech: "shadcnui", since: 2024, image: shadcnui },
+      { label: "ReactJs", tech: "reactjs", since: 2023, image: reactjs },
+
+      {
+        label: "Native Wind",
+        tech: "nativewind",
+        since: 2024,
+        image: nativewind,
+      },
+      {
+        label: "React Native",
+        tech: "reactnative",
+        since: 2024,
+        image: reactnative,
+      },
+      {
+        label: "Tailwind CSS",
+        tech: "tailwindcss",
+        since: 2023,
+        image: tailwindcss,
+      },
     ],
   },
   {
     id: "2",
     class: "backend",
     technology: [
-      "mongodb",
-      "mongoose",
-      "prisma",
-      "postgresql",
-      "php",
-      "firebase",
+      { label: "Mongo DB", tech: "mongodb", since: 2024, image: mongodb },
+      { label: "Mongoose", tech: "mongoose", since: 2024, image: mongoose },
+      { label: "Prisma", tech: "prisma", since: 2024, image: prisma },
+      {
+        label: "Postgresql",
+        tech: "postgresql",
+        since: 2024,
+        image: postgresql,
+      },
+      // { label: "Zod", tech: "zod", since: 2024, image: zod },
+      // { label: "PHP", tech: "php", since: 2024, image: php },
+      { label: "Firebase", tech: "firebase", since: 2024, image: firebase },
     ],
   },
   {
     id: "3",
     class: "cms",
-    technology: ["squarespace", "wix", "wordpress", "elementorpro"],
+    technology: [
+      {
+        label: "Squarespace",
+        tech: "squarespace",
+        since: 2019,
+        image: squarespace,
+      },
+      { label: "Wix", tech: "wix", since: 2023, image: wix },
+      { label: "Wordpress", tech: "wordpress", since: 2019, image: wordpress },
+      {
+        label: "Elementor Pro",
+        tech: "elementorpro",
+        since: 2019,
+        image: elementorpro,
+      },
+    ],
   },
   {
     id: "4",
     class: "design",
     technology: [
-      "figma",
-      "adobePhotoshop",
-      "adobeAfterEffects",
-      "adobeIllustrator",
-      "adobeLightRoom",
-      "adobeIndesign",
-      "adobePremierePro",
-      "canva",
-      "capcut",
+      { label: "Gimp", tech: "gimp", since: 2015, image: gimp },
+      { label: "Figma", tech: "figma", since: 2023, image: figma },
+      {
+        label: "Adobe Photoshop",
+        tech: "adobephotoshop",
+        since: 2018,
+        image: photoshop,
+      },
+      // {
+      //   label: "Adobe After Effects",
+      //   tech: "adobeaftereffects",
+      //   since: 2019,
+      //   image: aftereffects,
+      // },
+      {
+        label: "Adobe Illustrator",
+        tech: "adobeillustrator",
+        since: 2018,
+        image: illustrator,
+      },
+      // {
+      //   label: "Adobe Lightroom",
+      //   tech: "adobelightroom",
+      //   since: 2019,
+      //   image: lightroom,
+      // },
+      // {
+      //   label: "Adobe Indesign",
+      //   tech: "adobeindesign",
+      //   since: 2023,
+      //   image: indesign,
+      // },
+      // {
+      //   label: "Adobe Premiere Pro",
+      //   tech: "adobepremierepro",
+      //   since: 2022,
+      //   image: premierepro,
+      // },
+      { label: "Canva", tech: "canva", since: 2023, image: canva },
+      // { label: "Capcut", tech: "capcut", since: 2024, image: capcut },
     ],
   },
 ];

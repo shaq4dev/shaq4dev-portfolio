@@ -6,6 +6,7 @@ import Project from "./projects";
 import { proObject } from "@/lib/static";
 import FilterBlock from "./filterBlock";
 import { BiCaretDown, BiCaretUp } from "react-icons/bi";
+import Subheading from "../Subheading";
 
 type FilterByProps = {
   filterList: "all" | "ux" | "web";
@@ -50,11 +51,9 @@ const ProjectSection = () => {
     .map((i) => i.id).length;
 
   return (
-    <div className="">
+    <div>
       <div className="relative flex justify-between py-8 items-center mb-8 ">
-        <div className="text-4xl md:text-5xl font-bold text-purple-800">
-          Projects
-        </div>
+        <Subheading>Projects</Subheading>
         <div
           onClick={() => {
             setFilter(!filter);
@@ -71,7 +70,7 @@ const ProjectSection = () => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
         {/* project list */}
         {filterBy.filterList === "all" &&
           proObject
@@ -123,11 +122,11 @@ const ProjectSection = () => {
         (uxQuery > 6 && filterBy.filterList === "ux") ||
         (webQuery > 6 && filterBy.filterList === "web")) && (
         <div
-          className="flex justify-center py-8"
+          className="flex justify-center pb-16"
           onClick={() => setShow(!show)}
         >
           <div
-            className="bg-purple-300 my-5 py-3 px-4 hover:bg-purple-500 text-purple-900 cursor-pointer hover:text-white duration-200"
+            className="bg-purple-300 py-3 px-4 hover:bg-purple-500 text-purple-900 cursor-pointer hover:text-white duration-200"
             onClick={handleShowValue}
           >
             {show ? (

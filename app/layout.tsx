@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Nav/navigation";
 import BackToTop from "./components/Nav/backToTop";
+import Backdrop from "./components/Backdrop";
+import ResumeSection from "./components/Resume/resumeSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,14 +31,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth overflow-x-hidden relative`}
       >
-        <div className="absolute gap-3 right-2 md:right-40 top-0 flex">
-          <div className=" bg-purple-500 w-14 md:w-20 h-[4.5rem] md:h-[30rem]  rounded-b-full opacity-50"></div>
-          <div className=" bg-purple-800 w-20 h-[5rem] md:h-[40rem] hidden md:block rounded-b-full opacity-30"></div>
-          <div className=" bg-fuchsia-500 w-20 h-[3rem] md:h-[30rem] hidden md:block rounded-b-full opacity-30"></div>
-        </div>
+        <Backdrop />
         <Navigation />
         {children}
         <BackToTop />
+        <div
+          id="resume"
+          className="relative w-full h-screen bg-gradient-to-tl from-purple-950 to-purple-600"
+        >
+          <div className="absolute bg-gradient-to-b from-purple-700 h-24 w-24 top-10 right-5 md:right-20 rounded-full"></div>
+          <ResumeSection />
+        </div>
       </body>
     </html>
   );
