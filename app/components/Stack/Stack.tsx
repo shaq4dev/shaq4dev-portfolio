@@ -1,6 +1,7 @@
 "use client";
 
 import { timeline } from "@/lib/auxFunctions";
+import { TypeProps } from "@/lib/props";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ const baseWidth = 25;
 const trig = 510;
 
 // stack component
-const Stack = ({ label, type }: { label: string; type: any }) => {
+const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
   // use state
 
   const [trigger, setTrigger] = useState(false);
@@ -32,7 +33,7 @@ const Stack = ({ label, type }: { label: string; type: any }) => {
       </h3>
 
       <ul className="flex flex-col gap-2 ">
-        {type?.technology.map((i: any) => (
+        {type?.technology.map((i) => (
           <div
             key={i.tech}
             className="group md:flex items-center gap-3 hidden cursor-pointer"
@@ -61,7 +62,7 @@ const Stack = ({ label, type }: { label: string; type: any }) => {
             </div>
           </div>
         ))}
-        {type?.technology.map((i: any) => (
+        {type?.technology.map((i) => (
           <div
             key={i.tech}
             className="group flex items-center gap-3 md:hidden cursor-pointer"

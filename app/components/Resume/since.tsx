@@ -45,7 +45,7 @@ console.log(presentCount);
 
 const present = resume
   .filter((f) => f.since === "present")
-  .map((r, index) => (
+  .map((r) => (
     <WorkElement
       key={r.id}
       id={r.id}

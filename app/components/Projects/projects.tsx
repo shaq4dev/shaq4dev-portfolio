@@ -4,7 +4,6 @@ import { ProjectProps } from "@/lib/props";
 import Link from "next/link";
 
 const Project = ({
-  id,
   label,
   url,
   projectType,
@@ -18,7 +17,7 @@ const Project = ({
         <div className="absolute z-0 -bottom-40 -left-32 rounded-full bg-fuchsia-700 w-60 h-60 bg-opacity-5"></div>
         <div className="absolute bottom-16 text-purple-900">
           <div className="font-black text-2xl pb-2 ">{label}</div>
-          <div className="description text-xs py-3">{description}</div>
+          <div className="description text-xs py-3 pr-2">{description}</div>
         </div>
         <div className="absolute top-5 font-bold text-purple-900 capitalize text-xs">
           {projectType === "ux" && "UX/UI Design"}
@@ -40,15 +39,15 @@ const Project = ({
             ))
             .slice(0, 4)}
         </div>
-        <button className="absolute group top-4 md:top-[12.5rem] right-4 rounded-full h-10 w-36 bg-gradient-to-tr from-purple-700 to-purple-500 hover:bg-none hover:border-2 hover:border-purple-600 text-xs font-bold duration-200">
-          <Link
-            href={url}
-            className="text-purple-100 group-hover:text-purple-600 duration-200 flex items-center justify-center gap-2"
-          >
+        <Link
+          href={url}
+          className="absolute flex items-center justify-center cursor-pointer group top-4 md:top-[12.5rem] right-4 rounded-full h-10 w-36 bg-gradient-to-tr from-purple-700 to-purple-500 hover:bg-none hover:border-2 hover:border-purple-600 text-xs font-bold duration-200"
+        >
+          <div className="text-purple-100 group-hover:text-purple-600 duration-200 flex items-center justify-center gap-2">
             <p>View Project</p>
             <BsBoxArrowUpRight />
-          </Link>
-        </button>
+          </div>
+        </Link>
       </div>
     </>
   );

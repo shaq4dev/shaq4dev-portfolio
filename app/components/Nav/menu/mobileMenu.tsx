@@ -4,6 +4,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { DiGithubBadge } from "react-icons/di";
 import { FaAngleRight } from "react-icons/fa6";
 import Hamburger from "./hamburger";
+import { MenuProps } from "@/lib/props";
 
 const MobileMenu = ({
   toggle,
@@ -16,7 +17,7 @@ const MobileMenu = ({
   setToggle: (toggle: boolean) => void;
   setToggleHam: (toggleHam: boolean) => void;
 }) => {
-  const contactItem: any = menuObject[4];
+  const contactItem = menuObject[4];
   return (
     <>
       <Hamburger
@@ -36,7 +37,7 @@ const MobileMenu = ({
         <h2 className="font-black text-2xl md:text-2xl px-5 py-4">Menu</h2>
 
         <ul className="px-5 flex flex-col gap-4">
-          {menuObject.map((item: any) =>
+          {menuObject.map((item: MenuProps) =>
             item.id !== "contact" ? (
               <Link
                 href={item.url}
@@ -73,7 +74,7 @@ const MobileMenu = ({
             )
           )}
 
-          {toggle && (
+          {toggle && typeof contactItem.url === "object" && (
             <div className="flex flex-col gap-3">
               <div className="w-full bg-purple-300 hover:bg-purple-500 hover:text-white duration-200">
                 {contactItem.url.linkedIn && (

@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { UrlObject } from "url";
 
 export type ProjectProps = {
@@ -7,4 +8,21 @@ export type ProjectProps = {
   projectType: string;
   description: string;
   technologies: string[];
+};
+
+export type MenuProps = {
+  id: string;
+  label: string;
+  url: string | UrlObject | "" | object;
+};
+
+export type TypeProps = {
+  id: string;
+  class: string;
+  technology: {
+    label: string;
+    tech: string;
+    since: number;
+    image: StaticImageData;
+  }[];
 };

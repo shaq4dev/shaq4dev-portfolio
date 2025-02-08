@@ -4,8 +4,8 @@ const Star = ({
   spinRate,
   opacity,
 }: {
-  position?: string;
-  size?: string;
+  position: string;
+  size: string;
   spinRate: number;
   opacity: number;
 }) => {
@@ -13,7 +13,7 @@ const Star = ({
     <div
       className={`${position} absolute md:block`}
       style={{
-        animation: `spin ${spinRate}s linear infinite`,
+        animation: `spin ${spinRate}s ease-in-out infinite`,
         opacity: opacity,
       }}
     >

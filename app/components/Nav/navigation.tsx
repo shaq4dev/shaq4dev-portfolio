@@ -3,7 +3,6 @@
 import { useState } from "react";
 import MobileMenu from "./menu/mobileMenu";
 import DesktopMenu from "./menu/desktopMenu";
-import Hamburger from "./menu/hamburger";
 
 const Navigation = () => {
   const [toggle, setToggle] = useState(false);

@@ -4,36 +4,24 @@ import css3 from "@/public/brands/css3.png";
 import javascript from "@/public/brands/javascript.png";
 import typescript from "@/public/brands/typescript.png";
 import expo from "@/public/brands/expo.png";
-import zod from "@/public/brands/zod.png";
-
 import reactjs from "@/public/brands/react.png";
 import tailwindcss from "@/public/brands/tailwind.png";
 import nativewind from "@/public/brands/nativewind.png";
 import reactnative from "@/public/brands/reactnative.png";
 import shadcnui from "@/public/brands/shadcnui.png";
-
 import mongodb from "@/public/brands/mongodb.png";
 import mongoose from "@/public/brands/mongoose.png";
 import prisma from "@/public/brands/prisma.png";
 import postgresql from "@/public/brands/postgresql.png";
-import php from "@/public/brands/php.png";
 import firebase from "@/public/brands/firebase.png";
-
 import squarespace from "@/public/brands/squarespace.png";
 import wix from "@/public/brands/wix.png";
 import wordpress from "@/public/brands/wordpress.png";
 import elementorpro from "@/public/brands/elementorpro.png";
-
 import gimp from "@/public/brands/gimp.png";
 import figma from "@/public/brands/figma.png";
 import photoshop from "@/public/brands/photoshop.png";
-import aftereffects from "@/public/brands/afterEffects.png";
 import illustrator from "@/public/brands/illustrator.png";
-import lightroom from "@/public/brands/lightroom.png";
-import indesign from "@/public/brands/indesign.png";
-import premierepro from "@/public/brands/premierePro.png";
-import canva from "@/public/brands/canva.webp";
-import capcut from "@/public/brands/capcut.webp";
 
 export const proObject = [
   {
@@ -42,7 +30,7 @@ export const proObject = [
     url: "https://yassuh.com",
     projectType: "web",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A sleek website built with React.js, Next.js, and TypeScript, delivering a modern UI and smooth user experience. Designed for performance and accessibility, it ensures seamless navigation and interactivity.",
     technologies: ["react js", "next js", "typescript", "tailwind CSS"],
   },
   {
@@ -51,7 +39,7 @@ export const proObject = [
     url: "https://biblexplosionorgweb.vercel.app",
     projectType: "web",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A faith-based website built with Next.js, MongoDB, and Prisma to manage content and engage the community. It serves as a platform for biblical discussions, event updates, and spiritual resources.",
     technologies: ["next js", "mongo DB", "prisma", "firebase", "typescript"],
   },
   {
@@ -60,7 +48,7 @@ export const proObject = [
     url: "https://www.figma.com/proto/2B1B3k53XHKYIywKrsfL1u?node-id=0-1&t=TxAWjDOfRIzJfhBw-6",
     projectType: "ux",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A UX/UI design concept created in Figma for an intuitive and visually appealing experience. The design focuses on accessibility, clean layouts, and an engaging user interface.",
     technologies: ["figma"],
   },
   {
@@ -69,7 +57,7 @@ export const proObject = [
     url: "https://timcorporation.net/",
     projectType: "web",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A corporate website developed using WordPress, CSS, and Elementor Pro for a professional and flexible design. It provides a structured layout to enhance branding and company presence.",
     technologies: ["wordpress", "CSS", "elementor pro", "photoshop"],
   },
   {
@@ -78,7 +66,7 @@ export const proObject = [
     url: "https://www.figma.com/proto/fovrju55H9OIetFWEmqBKP/Aggro?node-id=477-279&t=lqqGgsW7GCL60fFD-6&starting-point-node-id=477%3A279",
     projectType: "ux",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A UX/UI prototype built in Figma, designed for a seamless and user-friendly interface. It emphasizes intuitive navigation, strong branding, and a modern aesthetic.",
     technologies: ["figma"],
   },
   {
@@ -87,7 +75,7 @@ export const proObject = [
     url: "https://github.com/shaq4dev/shaq4dev-portfolio",
     projectType: "web",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A personal portfolio website built with React.js, Next.js, and TypeScript to showcase projects and skills. Designed for smooth navigation, a clean UI, and engaging case studies.",
     technologies: ["react js", "next js", "typescript", "tailwind CSS"],
   },
   {
@@ -96,7 +84,7 @@ export const proObject = [
     url: "https://yassuh-com.vercel.app/en",
     projectType: "web",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat doloremque repellendus. Doloribus voluptas odio, enim voluptatum ipsum saepe suscipit vel numquam cumque nisi et. Mollitia perferendis dolor a aliquam.",
+      "A multilingual version of Yassuh, using Next.js, Next Intl, and TypeScript for global accessibility. It offers seamless language support and an optimized user experience.",
     technologies: ["next js", "next intl", "typescript", "tailwind CSS"],
   },
   {
@@ -105,7 +93,7 @@ export const proObject = [
     url: "https://www.figma.com/proto/psue9ZfOQBSwrYUDHMWQR2/Yassuh-Landing---YPX?node-id=31-720&p=f&t=JFeyfCsdQ8uostaQ-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=31%3A720&show-proto-sidebar=1",
     projectType: "ux",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. doloremque repellendus. Doloribus voluptas odio, enim voluptatum afasdf asdfqtgga Mollitia perferendis dolor a aliquam. ---- password: yassuh-landing-jul16",
+      "A UX/UI design project for Yassuh International, created in Figma with Photoshop and Illustrator assets. The design enhances brand identity with a cohesive and modern visual style. CODE: yassuh-landing-jul16",
     technologies: ["figma", "adobe photoshop", "illustrator"],
   },
 ];
