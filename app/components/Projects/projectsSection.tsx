@@ -52,7 +52,7 @@ const ProjectSection = () => {
 
   return (
     <div>
-      <div className="relative flex justify-between py-8 items-center mb-8 ">
+      <div className="relative flex justify-between py-8 items-center mb-8 mt-20 md:mt-0 ">
         <Subheading>Projects</Subheading>
         <div
           onClick={() => {
