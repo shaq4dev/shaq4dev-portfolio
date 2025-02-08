@@ -15,7 +15,7 @@ const DesktopMenu = ({
       <div className="gap-3 hidden md:flex">
         <div className="">
           <ul className="flex items-center gap-2 capitalize">
-            {menuObject.map((item) =>
+            {menuObject.map((item: any) =>
               item.id === "contact" ? (
                 <li
                   key={item.id}
@@ -49,12 +49,13 @@ const DesktopMenu = ({
                   ) : null}
                 </li>
               ) : (
-                <li
+                <Link
+                  href={item.url}
                   key={item.id}
                   className="text-lg cursor-pointer hover:bg-purple-100 hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200 font-medium"
                 >
-                  <Link href={item.url}>{item.label}</Link>
-                </li>
+                  <div>{item.label}</div>
+                </Link>
               )
             )}
           </ul>
