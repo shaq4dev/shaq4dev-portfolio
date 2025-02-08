@@ -5,6 +5,7 @@ import Navigation from "./components/Nav/navigation";
 import BackToTop from "./components/Nav/backToTop";
 import Backdrop from "./components/Backdrop";
 import ResumeSection from "./components/Resume/resumeSection";
+import Decorate from "./Decorate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +38,9 @@ export default function RootLayout({
         <BackToTop />
         <div
           id="resume"
-          className="relative w-full h-screen bg-gradient-to-tl from-purple-950 to-purple-600"
+          className="relative w-full bg-gradient-to-tl from-purple-950 to-purple-600 overflow-y-hidden"
         >
-          <div className="absolute bg-gradient-to-b from-purple-700 h-24 w-24 top-10 right-5 md:right-20 rounded-full"></div>
+          <Decorate />
           <ResumeSection />
         </div>
       </body>

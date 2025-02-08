@@ -289,3 +289,67 @@ export const techStack = [
     ],
   },
 ];
+
+export const resume = [
+  {
+    id: "0",
+    role: "UX/UI DEVELOPER, GRAPHIC ARTIST AND FRONT END DEVELOPER",
+    company: "YASSUH, INC.,",
+    location: "NEW JERSEY, USA",
+    date: "NOVEMBER 2023 - PRESENT",
+    since: "present",
+    function: [
+      "Create intuitive wireframes and prototypes for both web and mobile apps that revolutionized the way the Caribbean public interacts with their national police and Fire Brigade departments.",
+      "Develop visual tools for business proposals, significantly supporting investor acquisition efforts.",
+      "Designed, prototyped and developed yassuh.com's web landing page using React.js, Typescript, Tailwind CSS, HTML, CSS, and Next.js.",
+    ],
+  },
+  {
+    id: "1",
+    role: "UX/UI DEVELOPER, SR. FRONT END DEVELOPER",
+    company: "BIBLE EXPLOSION ORG.,",
+    location: "NEW YORK, USA",
+    date: "FEBRUARY 2023 - PRESENT",
+    since: "present",
+    function: [
+      "Led the prototyping and development of web application that simplifies weekly bible study meetings that are hosted by the Bible Explosion Team.",
+      "Design digital graphics for the organization's weekly marketing and communication strategies.",
+      "Manage the development and maintenance of biblexplosionorgweb.vercel.app's web landing page using MongoDB, React.js, Prisma, Firebase, Tailwind CSS, and Next.js.",
+    ],
+  },
+  {
+    id: "2",
+    role: "WORDPRESS DEVELOPER",
+    company: "TIM CORPORATION,",
+    location: "KINGSTON, JAMAICA",
+    date: "MARCH 2022 - MARCH 2022",
+    since: "2022",
+    function: [
+      "Redesigned and recreated timcorporation.net to fulfill the client's need for more engagement from a younger demographic.",
+      "Enhanced user engagement within the first 6 months after the initial release.",
+    ],
+  },
+  {
+    id: "3",
+    role: "LEAD FRONT-END DEVELOPER & MANAGING DIRECTOR",
+    company: "THESSIAN SOUND, LTD.,",
+    location: "KINGSON, JAMAICA",
+    date: "DECEMBER 2018 - DECEMBER 2022",
+    since: "2018",
+    function: [
+      "Led various marketing campaigns that often involved the development of images, motion graphics, and video content for social media and flyers.",
+      "Led a team that developed and executed UX strategies for website development using HTML, CSS, Javascript, PHP, and WordPress.",
+    ],
+  },
+  {
+    id: "4",
+    role: "FREELANCE GRAPHIC DESIGNER",
+    company: "FREELANCE,",
+    location: "REMOTE",
+    date: "MAY 2015 - DECEMBER 2018",
+    since: "2015",
+    function: [
+      "Designed and developed over 20+ logos, graphics and branding materials for various clients.",
+    ],
+  },
+];
