@@ -16,6 +16,10 @@ const BiographySection = () => {
 
       setScrollVal(Ypos);
     });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
   }, [scrollVal]);
 
   return (
