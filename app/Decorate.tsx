@@ -28,7 +28,7 @@ const Decorate = () => {
       {/* stars */}
 
       <Star
-        position="top-[26rem] right-[24rem]"
+        position="top-[26rem] right-[24rem] animate-spin"
         opacity={0.1}
         size="h-1 w-6"
         spinRate={30}
