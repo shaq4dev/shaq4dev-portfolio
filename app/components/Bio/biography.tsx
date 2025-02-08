@@ -1,35 +1,81 @@
+"use client";
+
 import Image from "next/image";
 import sb from "@/public/sb-purple.png";
 import BioBubble from "./bioBubble";
 import { BsStarFill } from "react-icons/bs";
+import { useState, useEffect } from "react";
 
 const BiographySection = () => {
+  const [scrollVal, setScrollVal] = useState(0);
+  const defaultScroll = 30;
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const Ypos = window.scrollY.valueOf();
+
+      setScrollVal(Ypos);
+    });
+  }, [scrollVal]);
+
   return (
     <section className="flex md:my-16">
       {/* hero image */}
-      <div className=" h-96 md:h-[35rem] w-full md:w-[40%] mt-10 md:mt-16 ">
+      <div className=" h-96 md:h-[35rem] w-full md:w-[40%] mt-20 md:mt-16 ">
         <div className="relative group cursor-pointer h-full">
           <Image
             src={sb}
             alt="hero-image"
             width={500}
             height={500}
-            className="absolute top-0 w-96 md:w-[33rem] z-10 grayscale group-hover:grayscale-0 md:grayscale-0 md:group-hover:grayscale duration-1000"
+            className={`${
+              scrollVal > defaultScroll
+                ? "grayscale md:grayscale"
+                : "grayscale-0 md:grayscale-0"
+            } absolute top-0 w-96 md:w-[33rem] z-10 duration-1000`}
           />
-          <div className="absolute top-20 left-20 md:top-0 md:left-0 group-hover:left-0 group-hover:top-0 md:group-hover:left-20 md:group-hover:top-20 w-40 h-40 md:w-52 md:h-52 bg-purple-500 rounded-full duration-700"></div>
-          <div className="absolute bottom-12 right-12 md:bottom-5 md:right-6 group-hover:right-5 group-hover:bottom-5 md:group-hover:right-36 md:group-hover:bottom-28 w-24 h-24 md:w-32 md:h-32 bg-purple-500 rounded-full duration-700"></div>
+          <div
+            className={`${
+              scrollVal > defaultScroll
+                ? "top-20 left-20 md:left-20 md:top-20"
+                : "left-0 top-0 md:top-0 md:left-0"
+            } absolute w-40 h-40 md:w-52 md:h-52 bg-purple-500 rounded-full duration-700`}
+          ></div>
+          <div
+            className={`${
+              scrollVal > defaultScroll
+                ? "bottom-20 right-20 md:right-36 md:bottom-28"
+                : "right-5 bottom-5 md:bottom-5 md:right-6"
+            } absolute w-24 h-24 md:w-32 md:h-32 bg-purple-500 rounded-full duration-700`}
+          ></div>
 
           {/* foreground */}
-          <div className="absolute bottom-28 rotate-45 left-24 group-hover:left-28 group-hover:bottom-32 w-8 h-8 md:w-12 md:h-12 bg-fuchsia-500 md:grayscale-0 md:group-hover:grayscale rounded-full duration-700 z-10"></div>
+          <div
+            className={`${
+              scrollVal > defaultScroll
+                ? "grayscale left-28 bottom-32 md:grayscale "
+                : "left-24 bottom-28 "
+            } absolute rotate-45 w-8 h-8 md:w-12 md:h-12 bg-fuchsia-500 rounded-full duration-700 z-10`}
+          ></div>
 
           {/* heading */}
 
           {/* hero message */}
           <h3 className="absolute w-full -bottom-28 md:top-0 text-2xl text-center capitalize md:hidden">
             Hey there, my name is{" "}
-            <span className="text-black group-hover:text-purple-500 text-7xl font-black flex flex-col justify-center items-center duration-700">
+            <span
+              className={`${
+                scrollVal > defaultScroll ? "text-black" : "text-purple-500"
+              }  text-7xl font-black flex flex-col justify-center items-center duration-700`}
+            >
               <div>Shaquille</div>
-              <div className="h-2 w-60 bg-black group-hover:bg-purple-500 group-hover:-rotate-3 rotate-3 duration-700"></div>
+              <div
+                className={`${
+                  scrollVal > defaultScroll
+                    ? "bg-black rotate-3 "
+                    : "bg-purple-500 -rotate-3"
+                } h-2 w-60 duration-700`}
+              ></div>
             </span>
           </h3>
         </div>
@@ -73,9 +119,19 @@ const BiographySection = () => {
 
         <h3 className="w-full text-2xl md:text-3xl md:font-medium text-center md:text-start md:flex md:flex-col items-start capitalize hidden ">
           Hey there, my name is{" "}
-          <span className="text-black md:text-purple-500 group-hover:text-purple-500 text-7xl md:text-[5.8rem] font-black flex flex-col justify-center items-center duration-700">
+          <span
+            className={`${
+              scrollVal > 30 ? "text-black" : "md:text-purple-500"
+            }   text-7xl md:text-[5.8rem] font-black flex flex-col justify-center items-center duration-700`}
+          >
             <div>Shaquille</div>
-            <div className="h-2 w-60 md:w-96 bg-black md:bg-purple-500 group-hover:bg-purple-500 group-hover:-rotate-3 rotate-3 md:-rotate-3 duration-700"></div>
+            <div
+              className={`${
+                scrollVal > 30
+                  ? "bg-black md:rotate-3"
+                  : "md:bg-purple-500 md:-rotate-3"
+              } h-2 w-60 md:w-96 group-hover:bg-purple-500 duration-700`}
+            ></div>
           </span>
         </h3>
 
