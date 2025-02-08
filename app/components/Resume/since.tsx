@@ -40,7 +40,7 @@ const Since = ({ timeId }: { timeId: string }) => {
 };
 export default Since;
 
-const presentCount = resume.filter((i) => i.since === "present").length;
+// const presentCount = resume.filter((i) => i.since === "present").length;
 
 const present = resume
   .filter((f) => f.since === "present")
