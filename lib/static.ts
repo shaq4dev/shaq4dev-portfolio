@@ -96,6 +96,15 @@ export const proObject = [
       "A UX/UI design project for Yassuh International, created in Figma with Photoshop and Illustrator assets. The design enhances brand identity with a cohesive and modern visual style. CODE: yassuh-landing-jul16",
     technologies: ["figma", "adobe photoshop", "illustrator"],
   },
+  {
+    id: "8",
+    label: "Carlton Pools",
+    url: "https://www.figma.com/proto/Hubuch7id0HaY4A3sY7WgU/Carlton-Pools---Hero?node-id=0-3&p=f&t=wLiXlS9vzkR3jveu-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A3",
+    projectType: "ux",
+    description:
+      "With the target audience being Boomers to Gen X, my overall approach is to prioritize clarity, accessibility and ease of use. This will mean: The use of larger font sizes and high contrast text, The use of san-serif fonts, in this case it’s Roboto, for legibility...",
+    technologies: ["figma"],
+  },
 ];
 
 export const menuObject = [
