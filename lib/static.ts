@@ -98,7 +98,7 @@ export const proObject = [
   },
   {
     id: "8",
-    label: "Carlton Pools",
+    label: "Carlton Pools (Swim SEO)",
     url: "https://www.figma.com/proto/Hubuch7id0HaY4A3sY7WgU/Carlton-Pools---Hero?node-id=0-3&p=f&t=wLiXlS9vzkR3jveu-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A3",
     projectType: "ux",
     description:
