@@ -1,8 +1,11 @@
+'use client'
+
 import BiographySection from "./components/Bio/biography";
 import ProjectSection from "./components/Projects/projectsSection";
 import StackSection from "./components/Stack/stackSection";
 
 const Landing = () => {
+
   return (
     <div className="relative px-5 md:px-16">
       <div id="bio" className="w-full h-[60rem] md:h-[100%]">

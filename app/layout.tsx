@@ -6,6 +6,7 @@ import BackToTop from "./components/Nav/backToTop";
 import Backdrop from "./components/Backdrop";
 import ResumeSection from "./components/Resume/resumeSection";
 import Decorate from "./Decorate";
+import GlobalTheme from '@/app/context/ThemeContext'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,17 +33,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative`}
       >
+      <GlobalTheme>
         <Backdrop />
         <Navigation />
         {children}
         <BackToTop />
         <div
-          id="resume"
-          className="relative w-full bg-gradient-to-tl from-purple-950 to-purple-600 overflow-y-hidden overflow-x-hidden"
+            id="resume"
+            className="relative w-full bg-gradient-to-tl from-purple-950 to-purple-600 overflow-y-hidden overflow-x-hidden"
         >
           <Decorate />
           <ResumeSection />
         </div>
+      </GlobalTheme>
       </body>
     </html>
   );
