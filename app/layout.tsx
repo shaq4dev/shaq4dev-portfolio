@@ -28,10 +28,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative `}
       >
       <GlobalTheme>
         <Backdrop />

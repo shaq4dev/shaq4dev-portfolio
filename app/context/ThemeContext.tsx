@@ -35,7 +35,9 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
     return (
         <ThemeContext.Provider value={theme}>
             <ThemeDispatchContext.Provider value={dispatch}>
-                {children}
+                <div className={`${theme === 'light' ? 'bg-light-primary text-dark-primary' : 'bg-dark-primary text-light-primary'} duration-500`}>
+                    {children}
+                </div>
             </ThemeDispatchContext.Provider>
         </ThemeContext.Provider>
     )
