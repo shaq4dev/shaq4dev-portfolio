@@ -2,6 +2,12 @@ import { menuObject } from "@/lib/static";
 import Link from "next/link";
 import { CiLinkedin } from "react-icons/ci";
 import { DiGithubBadge } from "react-icons/di";
+import {useContext} from 'react'
+import {ThemeContext} from "@/app/context/ThemeContext";
+import {ThemeDispatchContext} from "@/app/context/ThemeContext";
+import { FaSun } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
+import ThemeButton from "@/app/components/Nav/ThemeButton";
 
 const DesktopMenu = ({
   toggle,
@@ -10,6 +16,10 @@ const DesktopMenu = ({
   toggle: boolean;
   setToggle: (toggle: boolean) => void;
 }) => {
+
+  const theme = useContext(ThemeContext)
+  const dispatch = useContext(ThemeDispatchContext)
+
   return (
     <>
       <div className="gap-3 hidden md:flex">
@@ -58,6 +68,9 @@ const DesktopMenu = ({
                 </Link>
               )
             )}
+
+            <ThemeButton />
+
           </ul>
         </div>
       </div>
@@ -65,3 +78,6 @@ const DesktopMenu = ({
   );
 };
 export default DesktopMenu;
+
+
+// theme === 'light' ? <FaMoon size={20} /> : <FaSun size={20}/>
