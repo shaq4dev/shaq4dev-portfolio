@@ -38,7 +38,7 @@ export default function RootLayout({
         {/*<Backdrop />*/}
         <Navigation />
         {children}
-        <BackToTop />
+        {/*<BackToTop />*/}
         {/*<div*/}
         {/*    id="resume"*/}
         {/*    className="relative w-full bg-gradient-to-tl from-purple-950 to-purple-600 overflow-y-hidden overflow-x-hidden"*/}

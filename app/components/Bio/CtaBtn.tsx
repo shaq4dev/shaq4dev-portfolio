@@ -15,18 +15,18 @@ export default function CtaBtn ({icon}: {icon: string}){
     return (
 
         icon === 'resume' ? (
-            <a href='/resume.pdf' download="Shaquille-Blackwood-Resumé" className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
+            <a href='/resume.pdf' download="Shaquille-Blackwood-Resumé" className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center justify-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
                 {
                     icon === 'view' ? <MdOutlineRocketLaunch /> : icon === 'resume' ? <RiPagesLine/> : <PiHandshakeLight/>
                 }
                 <div>
                     {
-                        icon === 'view' ? 'View My Work' : icon === 'resume' ? 'View Resumé' : "Let's Collab"
+                        icon === 'view' ? 'View My Work' : icon === 'resume' ? 'Download Resumé' : "Let's Collab"
                     }
                 </div>
             </a>
         ) : icon === 'view' ? (
-            <Link href='#projects' className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
+            <Link href='#projects' className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center justify-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
                 {
                     icon === 'view' ? <MdOutlineRocketLaunch /> : icon === 'resume' ? <RiPagesLine/> : <PiHandshakeLight/>
                 }
@@ -37,7 +37,7 @@ export default function CtaBtn ({icon}: {icon: string}){
                 </div>
             </Link>
         ) : (
-            <button onClick={() => alert('Open Contact Modal')} className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
+            <button onClick={() => alert('Open Contact Modal')} className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center justify-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
                 {
                     icon === 'view' ? <MdOutlineRocketLaunch /> : icon === 'resume' ? <RiPagesLine/> : <PiHandshakeLight/>
                 }

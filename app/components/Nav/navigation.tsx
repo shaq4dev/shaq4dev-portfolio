@@ -14,7 +14,7 @@ const Navigation = () => {
         id="top"
         className={`flex relative w-full px-5 md:px-16 py-4 items-center justify-between`}
       >
-        <h1 className="font-black text-2xl md:text-4xl">Shaquille Blackwood</h1>
+        <h1 className="font-black text-2xl md:hidden lg:block lg:text-4xl">Shaquille Blackwood</h1>
 
         {/* mobile */}
 
