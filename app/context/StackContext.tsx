@@ -23,7 +23,7 @@ export default function StackContextProvider ({children}: {children: React.React
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(prev => (prev < 6 ? prev + 1 : 0))
-        }, 10000)
+        }, 20000)
 
         return () => clearInterval(interval) // clean up on unmount
     }, [])

@@ -1,13 +1,14 @@
 'use client'
 
-import {useContext} from 'react'
-import {StackContext} from '@/app/context/StackContext'
+import StackView from "./Stack";
 
 export default function ProjectByStack(){
-    //@ts-ignore
-    const {current} = useContext(StackContext)
 
     return (
-        <div className='w-full h-screen'>Project By Stack: {current}</div>
+        <div className='w-full h-screen'>
+            {
+                <StackView/>
+            }
+        </div>
     )
 }

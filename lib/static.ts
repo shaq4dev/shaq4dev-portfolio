@@ -36,7 +36,7 @@ export const proObject = [
   {
     id: "1",
     label: "Bible Explosion Org",
-    url: "https://biblexplosionorgweb.vercel.app",
+    url: "https://biblexplosion.org",
     projectType: "web",
     description:
       "A faith-based website built with Next.js, MongoDB, and Prisma to manage content and engage the community. It serves as a platform for biblical discussions, event updates, and spiritual resources.",
@@ -44,7 +44,7 @@ export const proObject = [
   },
   {
     id: "2",
-    label: "Bible Explosion Design",
+    label: "Bible Explosion Org Design",
     url: "https://www.figma.com/proto/2B1B3k53XHKYIywKrsfL1u?node-id=0-1&t=TxAWjDOfRIzJfhBw-6",
     projectType: "ux",
     description:
