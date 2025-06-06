@@ -62,7 +62,7 @@ const Landing = () => {
 
       {/*Main Stack*/}
 
-        <div className="flex gap-8 justify-center">
+        <div className="flex gap-4 my-4 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
             {
                 StackArr.map((item: any, index: number) => (
                     <div key={item.id} className='flex items-center'>
