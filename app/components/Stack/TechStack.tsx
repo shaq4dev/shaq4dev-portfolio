@@ -1,4 +1,4 @@
-
+'use client'
 import Image from 'next/image'
 import React from '@/public/brands/react.png'
 import Next from '@/public/brands/nextjs.png'
@@ -7,17 +7,19 @@ import JavaScript from '@/public/brands/javascript.png'
 import TypeScript from '@/public/brands/typescript.png'
 import Figma from '@/public/brands/figma.png'
 import WordPress from '@/public/brands/wordpress.png'
+import {useContext} from 'react'
+import {StackContext} from '@/app/context/StackContext'
 
 type StackProps = {
     i?: number,
     id?: string,
-    label?: string,
-    image?: string,
-    current: number,
-    setCurrent: (i: number) => void
 }
 
-export default function TechStack ({i, id, current, setCurrent}: StackProps){
+export default function TechStack ({i, id}: StackProps){
+
+    //@ts-ignore
+
+    const {current, setCurrent} = useContext(StackContext)
 
     return (
         <div className="w-full mx-auto pb-12 flex justify-center items-center cursor-pointer" onClick={() => setCurrent(i)}>

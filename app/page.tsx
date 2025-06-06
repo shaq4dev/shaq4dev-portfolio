@@ -10,24 +10,19 @@ import Link from "next/link";
 import {useContext, useState} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
 import TechStack from "@/app/components/Stack/TechStack";
-import React from "@/public/brands/react.png";
-import Next from "@/public/brands/nextjs.png";
-import Mongo from "@/public/brands/mongodb.png";
-
-
+import StackContextProvider from "@/app/context/StackContext";
+import ProjectByStack from "@/app/components/Projects/ProjectByStack";
 
 const Landing = () => {
 
     const theme = useContext(ThemeContext)
-    const [current, setCurrent] = useState<number>(1)
+    // const [current, setCurrent] = useState<number>(3)
 
     const {data: account, loading: accountLoading, errorMsg: accountError} = useFetch('https://api.github.com/users/shaq4dev')
     const {data: repos, loading: reposLoading, errorMsg: reposError} = useFetch('https://api.github.com/users/shaq4dev/repos')
     const {data: commits, loading: commitsLoading, errorMsg: commitsError} = useFetch('https://api.github.com/repos/shaq4dev/acme/commits')
 
     // create a new array
-
-
 
     if(accountLoading) return <div className='h-screen w-full flex justify-center items-center'>
         <h3 className='text-2xl font-semibold'>Your data is loading, please wait!</h3>
@@ -37,7 +32,6 @@ const Landing = () => {
         <h3 className='text-2xl font-semibold text-red-600'>An error occured while trying to get data from a github endpoint</h3>
         <Link className={`${theme === 'light' ? "bg-light-hover hover:bg-light-hover/50 hover:text-dark-primary/70" : "bg-dark-hover hover:bg-dark-hover/50 hover:text-light-primary/70"} rounded-md px-5 py-3`} href='/'>Return Home</Link>
     </div>
-
 
   return (
     <div className="relative w-full"> {/*px-5 md:px-16*/}
@@ -62,23 +56,23 @@ const Landing = () => {
 
       {/*Main Stack*/}
 
-        <div className="flex gap-4 my-4 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
-            {
-                StackArr.map((item: any, index: number) => (
-                    <div key={item.id} className='flex items-center'>
-                        <TechStack i={index} id={item.id} current={current} setCurrent={setCurrent}/>
-                    </div>
-                ))
-            }
-        </div>
+       <StackContextProvider>
+           <div className="flex gap-4 my-4 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
+               {
+                   StackArr.map((item: any, index: number) => (
+                       <div key={item.id} className='flex items-center'>
+                           <TechStack i={index} id={item.id}/>
+                       </div>
+                   ))
+               }
+           </div>
 
-        {/*<div className="flex gap-8 justify-center">*/}
+           {/*Projects Wrapper */}
 
-        {/*            <div className='flex items-center'>*/}
-        {/*                <TechStack i={0} id={StackArr[0].id} current={current} setCurrent={setCurrent}/>*/}
-        {/*            </div>*/}
-        {/*</div>*/}
+            <ProjectByStack />
 
+
+       </StackContextProvider>
 
     </div>
   );
