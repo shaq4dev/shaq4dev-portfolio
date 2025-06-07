@@ -6,7 +6,7 @@ export const projects = [
         projectType: "web",
         description:
             "A sleek website built with React.js, Next.js, and TypeScript, delivering a modern UI and smooth user experience. Designed for performance and accessibility, it ensures seamless navigation and interactivity.",
-        technologies: ["reactjs", "nextjs", "typescript", "tailwindcss", "shadcnui"],
+        technologies: ["reactjs", "nextjs", "vercel", "typescript", "tailwindcss", "shadcnui"],
     },
     {
         id: "1",
@@ -15,7 +15,7 @@ export const projects = [
         projectType: "web",
         description:
             "A faith-based website built with Next.js, MongoDB, and Prisma to manage content and engage the community. It serves as a platform for biblical discussions, event updates, and spiritual resources.",
-        technologies: ["nextjs", "reactjs", "mongodb", "prisma", "firebase", "typescript", "mongoose"],
+        technologies: ["nextjs", "vercel", "reactjs", "mongodb", "prisma", "firebase", "typescript", "mongoose"],
     },
     {
         id: "2",
@@ -33,7 +33,7 @@ export const projects = [
         projectType: "web",
         description:
             "A corporate website developed using WordPress, CSS, and Elementor Pro for a professional and flexible design. It provides a structured layout to enhance branding and company presence.",
-        technologies: ["wordpress", "css3", "elementorpro", "photoshop"],
+        technologies: ["wordpress", "elementorpro", "css3", "javascript", "html5", "photoshop"],
     },
     {
         id: "4",

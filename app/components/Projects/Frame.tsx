@@ -29,6 +29,7 @@ import figma from "@/public/brands/figma.png";
 import photoshop from "@/public/brands/photoshop.png";
 import illustrator from "@/public/brands/illustrator.png";
 import nextintl from '@/public/brands/nextintl.png'
+import vercel from '@/public/brands/vercel.png'
 
 export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
@@ -43,21 +44,21 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             l === 4 && i === 0 ? "h-64 col-span-3" :
                                 l === 5 && (i === 0 || i === 4)   ? "h-64 row-span-1 col-span-3" :
                                     l === 6 && (i === 0 || i === 3 || i === 4) ? "h-64 col-span-2" :
-                                        l === 7 && i === 0 || l === 7 && i === 6 ? "h-72 col-span-2" :
+                                        l === 7 && i === 0 || l === 7 && i === 6 ? "h-64 col-span-2" :
                                             l === 8 && i === 0 || l === 8 && i === 3 || l === 8 && i === 4 || l === 8 && i === 7 ? "h-64 col-span-2" :
                                     ""
             } 
             ${theme === 'light' ? 'bg-zinc-600/20' : 'bg-zinc-800'}
                     rounded-md overflow-hidden relative`
         }>
-                <div className={`${theme === 'light' ? 'bg-white/40 text-dark-primary' : 'bg-black/70 text-light-primary'} absolute flex flex-col bottom-0 left-0  w-full h-full px-8`}>
+                <div className={`${theme === 'light' ? 'bg-yellow-500/20 text-light-primary' : 'bg-yellow-500/20 text-light-primary'} absolute flex flex-col bottom-0 left-0  w-full h-full px-8`}>
                     <div className="text-3xl font-black pt-12 pb-5">{item.label}</div>
                     <div className="text-sm">{item.description}</div>
                     <div className='flex '>
                         {
-                            item.technologies.map((i, index) => <div key={index} className='py-4'>
+                            item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
                                 {
-                                    <Image src={brandMap[i]} alt={item.label} className='rounded-full w-5 h-5 bg-white'/>
+                                    <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                 }
                             </div>)
                         }
@@ -95,5 +96,6 @@ const brandMap: Record<string, any> = {
     figma,
     photoshop,
     illustrator,
-    nextintl
+    nextintl,
+    vercel
 }

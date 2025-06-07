@@ -4,10 +4,12 @@ import {useContext} from "react";
 import {StackContext} from "@/app/context/StackContext";
 import {useFetch} from "@/app/hooks/useFetch"
 import Frame from './Frame'
+import {ThemeContext} from "@/app/context/ThemeContext";
 
 export default function StackView(){
 
     const {current} = useContext(StackContext)
+    const theme =  useContext(ThemeContext)
     const {data: projects} = useFetch('/api/projects')
 
     const maxProject = projects.slice(0,8)
@@ -48,7 +50,7 @@ export default function StackView(){
             </div>
 
             <div className="flex justify-center">
-                {projects.length > 8 && <button onClick={() => alert('Goes to all [project] projects')} className='rounded-md border-2 py-2 px-5'>See All Projects</button>
+                {projects.length > 8 && <button onClick={() => alert('Goes to all [project] projects')} className={`${theme === 'light' ? 'border-dark-primary text-dark-primary' : 'border-light-primary text-light-primary'} duration-500 rounded-md border-2 py-2 px-5`}>See All Projects</button>
                 }
             </div>
 
