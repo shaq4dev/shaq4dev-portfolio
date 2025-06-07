@@ -12,11 +12,12 @@ export default function StackView(){
     const theme =  useContext(ThemeContext)
     const {data: projects, loading: projectsLoading, errorMsg: projectsError} = useFetch('/api/projects')
 
-    console.log(projects.reverse())
-    // console.log(arr.reverse())
+    // latest projects test
 
-    const maxProject = projects.slice(0, 20)
-    const defaultProject = projects.slice(0, 8)
+    const latestProjx = [...projects].reverse()
+
+    const maxProject = latestProjx.slice(0, 20)
+    const defaultProject = latestProjx.slice(0, 8)
 
     const l = maxProject.length
 
