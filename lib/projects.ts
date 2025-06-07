@@ -19,7 +19,7 @@ export const projects = [
     },
     {
         id: "2",
-        label: "Bible Explosion Org Design",
+        label: "Bible Explosion Org",
         url: "https://www.figma.com/proto/2B1B3k53XHKYIywKrsfL1u?node-id=0-1&t=TxAWjDOfRIzJfhBw-6",
         projectType: "ux",
         description:
@@ -37,7 +37,7 @@ export const projects = [
     },
     {
         id: "4",
-        label: "Aggro Design & Prototype",
+        label: "Aggro Design",
         url: "https://www.figma.com/proto/fovrju55H9OIetFWEmqBKP/Aggro?node-id=477-279&t=lqqGgsW7GCL60fFD-6&starting-point-node-id=477%3A279",
         projectType: "ux",
         description:
@@ -55,7 +55,7 @@ export const projects = [
     },
     {
         id: "6",
-        label: "Yassuh International",
+        label: "Yassuh Intl.",
         url: "https://yassuh-com.vercel.app/en",
         projectType: "web",
         description:
