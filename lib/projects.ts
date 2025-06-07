@@ -6,7 +6,7 @@ export const projects = [
         projectType: "web",
         description:
             "A sleek website built with React.js, Next.js, and TypeScript, delivering a modern UI and smooth user experience. Designed for performance and accessibility, it ensures seamless navigation and interactivity.",
-        technologies: ["react js", "next js", "typescript", "tailwind CSS", "shadcn ui"],
+        technologies: ["reactjs", "nextjs", "typescript", "tailwindcss", "shadcnui"],
     },
     {
         id: "1",
@@ -15,7 +15,7 @@ export const projects = [
         projectType: "web",
         description:
             "A faith-based website built with Next.js, MongoDB, and Prisma to manage content and engage the community. It serves as a platform for biblical discussions, event updates, and spiritual resources.",
-        technologies: ["next js", "react js", "mongo DB", "prisma", "firebase", "typescript", "mongoose"],
+        technologies: ["nextjs", "reactjs", "mongodb", "prisma", "firebase", "typescript", "mongoose"],
     },
     {
         id: "2",
@@ -33,7 +33,7 @@ export const projects = [
         projectType: "web",
         description:
             "A corporate website developed using WordPress, CSS, and Elementor Pro for a professional and flexible design. It provides a structured layout to enhance branding and company presence.",
-        technologies: ["wordpress", "CSS", "elementor pro", "photoshop"],
+        technologies: ["wordpress", "css3", "elementorpro", "photoshop"],
     },
     {
         id: "4",
@@ -51,7 +51,7 @@ export const projects = [
         projectType: "web",
         description:
             "A personal portfolio website built with React.js, Next.js, and TypeScript to showcase projects and skills. Designed for smooth navigation, a clean UI, and engaging case studies.",
-        technologies: ["react js", "next js", "typescript", "tailwind CSS"],
+        technologies: ["reactjs", "nextjs", "typescript", "tailwindcss"],
     },
     {
         id: "6",
@@ -60,7 +60,7 @@ export const projects = [
         projectType: "web",
         description:
             "A multilingual version of Yassuh, using Next.js, Next Intl, and TypeScript for global accessibility. It offers seamless language support and an optimized user experience.",
-        technologies: ["next js", "react js", "next intl", "typescript", "tailwind CSS"],
+        technologies: ["nextjs", "reactjs", "nextintl", "typescript", "tailwindcss"],
     },
     {
         id: "7",
@@ -69,7 +69,7 @@ export const projects = [
         projectType: "ux",
         description:
             "A UX/UI design project for Yassuh International, created in Figma with Photoshop and Illustrator assets. The design enhances brand identity with a cohesive and modern visual style. CODE: yassuh-landing-jul16",
-        technologies: ["figma", "adobe photoshop", "illustrator"],
+        technologies: ["figma", "photoshop", "illustrator"],
     },
     {
         id: "8",
