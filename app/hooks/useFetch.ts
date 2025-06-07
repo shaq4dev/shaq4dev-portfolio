@@ -6,13 +6,13 @@ export function useFetch(url: string){
 
     const [data, setData] = useState<[]>([])
     const [loading, setLoading] = useState<boolean>(false)
-    const [errorMsg, setErrorMsg] = useState<string>("")
+    const [errorMsg, setErrorMsg] = useState("")
 
     async function fetchData(){
         try{
 
             setLoading(true)
-            const response = await fetch(url)
+            const response = await fetch(url, {cache: 'no-store'})
             if(!response.ok) {
                 setErrorMsg('Failed to fetch the requested data. Try again!')
             }
@@ -21,9 +21,9 @@ export function useFetch(url: string){
 
             setLoading(false)
 
-        } catch(e){
-            console.log(e)
-            setErrorMsg('An Error occured!')
+        } catch(error){
+            console.log(error)
+            setErrorMsg(error.message)
             setLoading(false)
         }
     }

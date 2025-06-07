@@ -17,21 +17,21 @@ const Landing = () => {
 
     const theme = useContext(ThemeContext)
     // const [current, setCurrent] = useState<number>(3)
-
-    const {data: account, loading: accountLoading, errorMsg: accountError} = useFetch('https://api.github.com/users/shaq4dev')
-    const {data: repos, loading: reposLoading, errorMsg: reposError} = useFetch('https://api.github.com/users/shaq4dev/repos')
-    const {data: commits, loading: commitsLoading, errorMsg: commitsError} = useFetch('https://api.github.com/repos/shaq4dev/acme/commits')
+    //
+    // const {data: account, loading: accountLoading, errorMsg: accountError} = useFetch('https://api.github.com/users/shaq4dev')
+    // const {data: repos, loading: reposLoading, errorMsg: reposError} = useFetch('https://api.github.com/users/shaq4dev/repos')
+    // const {data: commits, loading: commitsLoading, errorMsg: commitsError} = useFetch('https://api.github.com/repos/shaq4dev/acme/commits')
 
     // create a new array
 
-    if(accountLoading) return <div className='h-screen w-full flex justify-center items-center'>
-        <h3 className='text-2xl font-semibold'>Your data is loading, please wait!</h3>
-    </div>
-
-    if(accountError) return <div className='h-screen gap-5 w-full text-center flex flex-col justify-center items-center'>
-        <h3 className='text-2xl font-semibold text-red-600'>An error occured while trying to get data from a github endpoint</h3>
-        <Link className={`${theme === 'light' ? "bg-light-hover hover:bg-light-hover/50 hover:text-dark-primary/70" : "bg-dark-hover hover:bg-dark-hover/50 hover:text-light-primary/70"} rounded-md px-5 py-3`} href='/'>Return Home</Link>
-    </div>
+    // if(accountLoading) return <div className='h-screen w-full flex justify-center items-center'>
+    //     <h3 className='text-2xl font-semibold'>Your data is loading, please wait!</h3>
+    // </div>
+    //
+    // if(accountError) return <div className='h-screen gap-5 w-full text-center flex flex-col justify-center items-center'>
+    //     <h3 className='text-2xl font-semibold text-red-600'>An error occured while trying to get data from a github endpoint</h3>
+    //     <Link className={`${theme === 'light' ? "bg-light-hover hover:bg-light-hover/50 hover:text-dark-primary/70" : "bg-dark-hover hover:bg-dark-hover/50 hover:text-light-primary/70"} rounded-md px-5 py-3`} href='/'>Return Home</Link>
+    // </div>
 
   return (
     <div className="relative w-full"> {/*px-5 md:px-16*/}

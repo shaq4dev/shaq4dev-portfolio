@@ -39,6 +39,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
     const theme = useContext(ThemeContext)
 
     if(item.url === 'undefined') return null
+    // console.log(l)
 
     return (
         <div className={
@@ -50,8 +51,9 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                                 l === 5 && (i === 0 || i === 4)   ? "h-64 row-span-1 col-span-3" :
                                     l === 6 && (i === 0 || i === 3 || i === 4) ? "h-64 col-span-2" :
                                         l === 7 && i === 0 || l === 7 && i === 6 ? "h-64 col-span-2" :
-                                            l === 8 && i === 0 || l === 8 && i === 3 || l === 8 && i === 4 || l === 8 && i === 7 ? "h-64 col-span-2" :
-                                    ""
+                                            l === 8 && (i === 0 || i === 3 || i === 4 || i === 7)? "h-64 col-span-2" :
+                                                l >= 9 && (i === 0 || i === 3 || i === 4 || i === 7) ?
+                                    "h-64 col-span-2" : null
             } 
             ${theme === 'light' ? 'bg-zinc-600/20' : 'bg-zinc-800'}
                     rounded-md overflow-hidden relative`
@@ -78,14 +80,14 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                                 l === 3 ? "text-2xl pb-5" :
                                 l === 4 && i === 0 ? "text-xl pb-2" :
                                     l === 4 ? "text-md pb-3" :
-                                        l === 5 && (i === 0 || i === 4) ? "" :
-                                            l === 5 ? "" :
-                                                l === 6 && (i === 0 || i === 3 || i === 4) ? "" :
-                                                    l === 6 && (i === 1 || i === 2 || i === 5) ? "" :
-                                                        l === 7 && (i === 0 || i === 7 || i === 6) ? "" :
-                                                            l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "" :
-                                                                l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "" :
-                                                                    l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "" :
+                                        l === 5 && (i === 0 || i === 4) ? "text-xl pb-2":
+                                            l === 5 ? "text-md pb-3" :
+                                                l === 6 && (i === 0 || i === 3 || i === 4) ? "text-md pb-3" :
+                                                    l === 6 && (i === 1 || i === 2 || i === 5) ? "text-md pb-3" :
+                                                        l === 7 && (i === 0 || i === 7 || i === 6) ? "text-md pb-3" :
+                                                            l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "text-md pb-3" :
+                                                                l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "text-md pb-3" :
+                                                                    l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-md pb-3" :
                                                                         ""
                     } font-medium`}>{
                         (
