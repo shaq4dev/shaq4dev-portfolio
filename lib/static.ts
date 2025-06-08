@@ -124,9 +124,9 @@ export const menuObject = [
     url: "#tech-stack",
   },
   {
-    id: "resume",
-    label: "resumé",
-    url: "#resume",
+    id: "social",
+    label: "social",
+    url: "#social",
   },
   {
     id: "contact",

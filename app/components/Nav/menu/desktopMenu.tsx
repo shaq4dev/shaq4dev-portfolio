@@ -29,7 +29,17 @@ const DesktopMenu = ({
                 >
                   <div>{item.label}</div>
                 </Link>
-            )}
+            ).slice(0,4)}
+
+            {menuObject.map((item) =>
+                <button
+                    onClick={() => alert('modal for contact form trigger')}
+                    key={item.id}
+                    className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover'} text-lg cursor-pointer  hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200 font-medium capitalize`}
+                >
+                  <div>{item.label}</div>
+                </button>
+            ).slice(4,5)}
             <ThemeButton />
           </ul>
         </div>

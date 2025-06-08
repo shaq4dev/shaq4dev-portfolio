@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BsArrowUp } from "react-icons/bs";
+import { TiArrowUpThick } from "react-icons/ti";
 
 const BackToTop = () => {
   const [scrollValue, setScrollValue] = useState(0);
@@ -22,14 +23,14 @@ const BackToTop = () => {
     <Link
       href="/#top"
       className={`${
-        cutOffPoint ? "hidden" : "fixed"
-      } group bottom-5 right-5 cursor-pointer z-10`}
+        cutOffPoint ? "opacity-0 translate-y-12" : "opacity-100"
+      } group fixed bottom-5 right-5 cursor-pointer z-10 duration-500`}
     >
-      <div className="rounded-full border-2 border-purple-500 group-hover:border-purple-700 h-11 w-11 flex items-center justify-center duration-200">
-        <BsArrowUp
+      <div className="rounded-full border-4 border-mainlow_hover group-hover:border-main_hover h-11 w-11 flex items-center justify-center duration-200">
+        <TiArrowUpThick
           size={25}
           fontWeight={900}
-          className="text-purple-500 group-hover:text-purple-700 font-black duration-200"
+          className="text-mainlow_hover group-hover:text-main_hover font-black duration-200"
         />
       </div>
     </Link>

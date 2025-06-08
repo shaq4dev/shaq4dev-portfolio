@@ -35,17 +35,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative `}
       >
       <GlobalTheme>
-        {/*<Backdrop />*/}
         <Navigation />
         {children}
-        {/*<BackToTop />*/}
-        {/*<div*/}
-        {/*    id="resume"*/}
-        {/*    className="relative w-full bg-gradient-to-tl from-purple-950 to-purple-600 overflow-y-hidden overflow-x-hidden"*/}
-        {/*>*/}
-        {/*  <Decorate />*/}
-        {/*  <ResumeSection />*/}
-        {/*</div>*/}
+        <BackToTop />
       </GlobalTheme>
       </body>
     </html>

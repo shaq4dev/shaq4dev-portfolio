@@ -9,11 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: '#0d9488',         // Teal 600
-        main_hover: '#0f766e',   // Teal 700
-        main_overlay: '#134e4a', // Teal 900
-        mainlow: '#14b8a6',      // Teal 500
-        mainlow_hover: '#0f766e', // Teal 700
+        main: '#1e3a8a',         // Deep Sapphire Blue (luxurious, elegant, masculine)
+        main_hover: '#1e40af',   // Stronger Royal Blue
+        main_overlay: '#0f172a', // Almost black-navy for overlays or backgrounds
+        mainlow: '#3b82f6',      // Bright Blue Accent (for subtle highlights)
+        mainlow_hover: '#2563eb', // Smooth hover state for lighter elements
         light: {
           primary: '#FFF8F0',
           secondary: '#0D160B',

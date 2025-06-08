@@ -31,7 +31,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
   }, []);
   return (
     <div className="w-full">
-      <h3 className="font-bold text-lg py-8 text-main capitalize">
+      <h3 className="font-bold text-lg py-8 text-mainlow capitalize">
         {label}
       </h3>
 

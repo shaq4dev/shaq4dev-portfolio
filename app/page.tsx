@@ -1,63 +1,59 @@
 'use client'
 
-import BiographySection from "./components/Bio/biography";
-import ProjectSection from "./components/Projects/projectsSection";
-import StackSection from "./components/Stack/stackSection";
 import CtaBtn from "@/app/components/Bio/CtaBtn";
 import GridLightAnimation from "@/app/components/Bio/GridLightAnimation";
-import {useFetch} from '@/app/hooks/useFetch'
-import Link from "next/link";
-import {useContext, useState} from 'react'
+import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
 import TechStack from "@/app/components/Stack/TechStack";
 import StackContextProvider from "@/app/context/StackContext";
 import ProjectByStack from "@/app/components/Projects/ProjectByStack";
+import StackSection from "@/app/components/Stack/stackSection";
+import Link from 'next/link'
+import {menuObject} from "@/lib/static";
+
+const date = new Date()
+const year = date.getFullYear()
 
 const Landing = () => {
 
     const theme = useContext(ThemeContext)
-    // const [current, setCurrent] = useState<number>(3)
-    //
-    // const {data: account, loading: accountLoading, errorMsg: accountError} = useFetch('https://api.github.com/users/shaq4dev')
-    // const {data: repos, loading: reposLoading, errorMsg: reposError} = useFetch('https://api.github.com/users/shaq4dev/repos')
-    // const {data: commits, loading: commitsLoading, errorMsg: commitsError} = useFetch('https://api.github.com/repos/shaq4dev/acme/commits')
+    const contact = menuObject.find(f => f.id.includes('contact'))
 
-    // create a new array
-
-    // if(accountLoading) return <div className='h-screen w-full flex justify-center items-center'>
-    //     <h3 className='text-2xl font-semibold'>Your data is loading, please wait!</h3>
-    // </div>
-    //
-    // if(accountError) return <div className='h-screen gap-5 w-full text-center flex flex-col justify-center items-center'>
-    //     <h3 className='text-2xl font-semibold text-red-600'>An error occured while trying to get data from a github endpoint</h3>
-    //     <Link className={`${theme === 'light' ? "bg-light-hover hover:bg-light-hover/50 hover:text-dark-primary/70" : "bg-dark-hover hover:bg-dark-hover/50 hover:text-light-primary/70"} rounded-md px-5 py-3`} href='/'>Return Home</Link>
-    // </div>
+    // absolute top-36 md:top-32 lg:left-36
 
   return (
     <div className="relative w-full"> {/*px-5 md:px-16*/}
-            <div className="absolute top-36 md:top-32 lg:left-36"> {/*w-[90%]*/}
-                <div className="flex flex-col items-center "> {/*mt-28 lg:mt-52*/}
-                    <div className="text-center flex flex-col gap-3 lg:gap-5 w-[90%] lg:w-1/2">
-                        <h1 className='font-black text-4xl md:text-6xl'>Front End Developer and UI/UX Designer</h1>
-                        <h3 className='font-semibold text-2xl md:text-4xl'>Crafting beautiful, responsive digital experiences for modern brands.</h3>
-                        <p className='text-md md:text-xl md:px-5 lg:px-0'>I design and build accessible, user-first web and mobile apps with performance and aesthetics in mind.</p>
-                    </div>
-                    <div className="flex flex-col gap-2 cta my-10 md:flex-row md:gap-5">
-                        <CtaBtn  icon='view' />
-                        <CtaBtn  icon='resume' />
-                        <CtaBtn  icon='collab' />
+        <div id="bio"/>
+
+            <div className="absolute w-screen">
+                <div
+                    className="py-52"
+
+                > {/*w-[90%]*/}
+                    <div className="flex flex-col items-center "> {/*mt-28 lg:mt-52*/}
+                        <div className="text-center flex flex-col gap-3 lg:gap-5 w-[90%] lg:w-3/4 xl:w-1/2">
+                            <h1 className='font-black text-4xl md:text-6xl'>Front End Developer and UI/UX Designer</h1>
+                            <h3 className='font-semibold text-2xl md:text-4xl'>Crafting beautiful, responsive digital experiences for modern brands.</h3>
+                            <p className='text-md md:text-xl md:px-5 lg:px-0'>I design and build accessible, user-first web and mobile apps with performance and aesthetics in mind.</p>
+                        </div>
+                        <div className="flex flex-col gap-2 cta my-10 md:flex-row md:gap-5">
+                            <CtaBtn  icon='view' />
+                            <CtaBtn  icon='resume' />
+                            <CtaBtn  icon='collab' />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="lg:block">
-                <GridLightAnimation/>
-            </div>
+        <div className="lg:block overflow-x-hidden">
+            <GridLightAnimation/>
+        </div>
+
 
 
       {/*Main Stack*/}
 
        <StackContextProvider>
-           <div className="flex gap-4 my-4 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
+           <div className="flex gap-4 my-4 pt-12 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
                {
                    StackArr.map((item: any, index: number) => (
                        <div key={item.id} className='flex items-center'>
@@ -66,11 +62,25 @@ const Landing = () => {
                    ))
                }
            </div>
-            <ProjectByStack />
+           <div id="projects">
+               <ProjectByStack />
+           </div>
        </StackContextProvider>
 
         <div id="tech-stack" className="mx-6 md:mx-16">
           <StackSection />
+        </div>
+
+        <div id="social" className={
+            `${theme === 'light' ? "bg-main_overlay" : "bg-mainlow/50"} h-20 text-light-primary mt-20 flex items-center text-sm gap-2 justify-center`
+        }>
+            <div className=''>
+                © {year}. All Rights Reserved.
+            </div>
+            <div className='flex items-center gap-1'>
+                <Link href={contact.url.github} target="_blank" className="github hover:underline">Github</Link>
+                <Link href={contact.url.linkedIn} target="_blank" className="linkedIn hover:underline">LinkedIn</Link>
+            </div>
         </div>
 
     </div>
