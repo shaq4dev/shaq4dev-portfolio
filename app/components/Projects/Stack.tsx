@@ -14,10 +14,20 @@ export default function StackView(){
 
     // latest projects test
 
-    const latestProjx = [...projects].reverse()
+    const stackList = [
+        'reactjs',
+        'nextjs',
+        'mongodb',
+        'javascript',
+        'typescript',
+        'figma',
+        'wordpress'
+    ]
 
-    const maxProject = latestProjx.slice(0, 20)
-    const defaultProject = latestProjx.slice(0, 8)
+    const latestProjx = [...projects].reverse()
+    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[current]))
+    const maxProject = filteredProj.slice(0, 8)
+    const defaultProject = filteredProj.slice(0, 8)
 
     const l = maxProject.length
 
@@ -45,14 +55,14 @@ export default function StackView(){
             <div className={
                 `${
                     l === 1 ? "grid-cols-1" :
-                        l === 2 ? "grid-cols-2" :
-                            l === 3 ? "grid-cols-2 grid-rows-2" :
-                                l === 4 ? "grid-cols-3 grid-rows-2" :
-                                    l === 5 ? "grid-cols-3 grid-rows-2" :
-                                        l === 6 ? "grid-cols-3 grid-rows-2" :
-                                            l === 7 ? "grid-cols-3 grid-rows-3" :
-                                                l === 8 ? "grid-cols-3 grid-rows-4" :
-                                                    l >= 9 ? "grid-cols-3 grid-rows-4" : 
+                        l === 2 ? "grid-cols-1 md:grid-cols-2" :
+                            l === 3 ? "grid-cols-1 md:grid-cols-2 md:grid-rows-2" :
+                                l === 4 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
+                                    l === 5 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
+                                        l === 6 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
+                                            l === 7 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-3" :
+                                                l === 8 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-4" :
+                                                    l >= 9 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-4" : 
                                                         null
                 } 
                 my-16 grid gap-3`
@@ -66,7 +76,7 @@ export default function StackView(){
             </div>
 
             <div className="flex justify-center">
-                {projects.length > 8 && <button onClick={() => alert('Goes to all [project] projects')} className={`${theme === 'light' ? 'border-dark-primary text-dark-primary' : 'border-light-primary text-light-primary'} duration-500 rounded-md border-2 py-2 px-3`}>See All Projects</button>
+                {maxProject.length > 8 && <button onClick={() => alert('Goes to all [project] projects')} className={`${theme === 'light' ? 'border-dark-primary text-dark-primary' : 'border-light-primary text-light-primary'} duration-500 rounded-md border-2 py-2 px-3`}>See More</button>
                 }
             </div>
 
