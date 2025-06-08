@@ -51,7 +51,7 @@ export const projects = [
     },
     {
         id: "5",
-        label: "Portfolio",
+        label: "Shaquille Blackwood",
         url: "https://github.com/shaq4dev/shaq4dev-portfolio",
         image_url: "https://cdn.pixabay.com/photo/2016/11/22/20/11/photography-1850469_1280.jpg",
         projectType: "web",

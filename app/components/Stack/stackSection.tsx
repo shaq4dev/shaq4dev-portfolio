@@ -16,7 +16,7 @@ const StackSection = () => {
 
       {/* fullstack */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 md:mt-10 mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 md:mt-10 mb-5">
         <Stack label="full stack development" type={fullstack} />
         <Stack label="front end development" type={frontend} />
         <Stack label="graphic designing" type={design} />

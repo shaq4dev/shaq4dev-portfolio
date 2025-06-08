@@ -22,7 +22,7 @@ export default function TechStack ({i, id}: StackProps){
     const {current, setCurrent} = useContext(StackContext)
 
     return (
-        <div className="w-full mx-auto pb-12 flex justify-center items-center cursor-pointer" onClick={() => setCurrent(i)}>
+        <div className="w-full mx-auto  flex justify-center items-center cursor-pointer" onClick={() => setCurrent(i)}>
             <Image src={id === 'react' ? React : id === 'next' ? Next : id === 'mongo' ? Mongo : id === 'javascript' ? JavaScript : id === 'typescript' ? TypeScript : id === 'figma' ? Figma : id === 'wordpress' ? WordPress : null} width={40} height={40} alt='react' className={`${current === i ? 'animate-[spin_8s_linear_infinite] w-12 mx-2' : 'opacity-40 w-8 hover:opacity-80 '} duration-500`}/>
         </div>
     )

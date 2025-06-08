@@ -18,7 +18,7 @@ const DesktopMenu = ({
 
   return (
     <>
-      <div className="gap-3 hidden md:flex">
+      <div className="gap-3 hidden md:flex md:justify-center lg:justify-end w-full">
         <div className="">
           <ul className="flex items-center gap-2 capitalize">
             {menuObject.map((item) =>

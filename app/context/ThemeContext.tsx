@@ -22,7 +22,7 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
             if(localTheme === 'light' || localTheme === 'dark') return localTheme
         }
 
-        return 'light'
+        return 'dark'
 
     }
 

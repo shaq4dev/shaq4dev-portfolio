@@ -27,7 +27,7 @@ const Landing = () => {
 
             <div className="absolute w-screen">
                 <div
-                    className="py-52"
+                    className="pb-52 pt-36 md:py-52"
 
                 > {/*w-[90%]*/}
                     <div className="flex flex-col items-center "> {/*mt-28 lg:mt-52*/}
@@ -62,12 +62,15 @@ const Landing = () => {
                    ))
                }
            </div>
-           <div id="projects">
+           <div className="pb-6 md:pb-12"  id="projects"></div>
+           <div className=''>
                <ProjectByStack />
            </div>
        </StackContextProvider>
 
-        <div id="tech-stack" className="mx-6 md:mx-16">
+        <div className="pb-16 md:pb-20"  id="tech-stack"></div>
+
+        <div  className="mx-6 md:mx-16">
           <StackSection />
         </div>
 
@@ -77,9 +80,9 @@ const Landing = () => {
             <div className=''>
                 © {year}. All Rights Reserved.
             </div>
-            <div className='flex items-center gap-1'>
-                <Link href={contact.url.github} target="_blank" className="github hover:underline">Github</Link>
-                <Link href={contact.url.linkedIn} target="_blank" className="linkedIn hover:underline">LinkedIn</Link>
+            <div className='flex items-center gap-1 '>
+                <Link href={contact.url.github} target="_blank" className="github hover:underline text-cyan-300 hover:text-light-primary duration-500">Github</Link>
+                <Link href={contact.url.linkedIn} target="_blank" className="linkedIn hover:underline text-cyan-300 hover:text-light-primary duration-500">LinkedIn</Link>
             </div>
         </div>
 
