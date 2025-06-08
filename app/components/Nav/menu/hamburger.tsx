@@ -21,15 +21,15 @@ const Hamburger = ({
         <div
           className={` ${
             toggleHam
-              ? "absolute top-0 rotate-45 duration-500 bg-purple-400 group-hover:bg-purple-200 "
-              : "group-hover:bg-white bg-purple-200"
+              ? "absolute top-0 rotate-45 duration-500 bg-main group-hover:bg-main/90"
+              : "group-hover:bg-main/50 bg-main"
           }  w-8 h-1 duration-500`}
         ></div>
         <div
           className={` ${
             toggleHam
-              ? "absolute top-0 -rotate-45 duration-500 bg-purple-400 group-hover:bg-purple-200"
-              : "group-hover:bg-white bg-purple-200"
+              ? "absolute top-0 -rotate-45 duration-500 bg-main group-hover:bg-main/90"
+              : "group-hover:bg-main/50 bg-main"
           } w-8 h-1 duration-500`}
         ></div>
       </div>

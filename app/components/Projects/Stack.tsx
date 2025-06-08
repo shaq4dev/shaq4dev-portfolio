@@ -25,7 +25,7 @@ export default function StackView(){
     ]
 
     const latestProjx = [...projects].reverse()
-    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[current]))
+    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
     const maxProject = filteredProj.slice(0, 8)
     const defaultProject = filteredProj.slice(0, 8)
 

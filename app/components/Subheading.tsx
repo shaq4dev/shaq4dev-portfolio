@@ -7,7 +7,7 @@ const Subheading = ({
 }) => {
   return (
     <div
-      className={`${className} text-4xl md:text-5xl font-bold text-purple-800`}
+      className={`${className} text-4xl md:text-5xl font-black`}
     >
       {children}
     </div>

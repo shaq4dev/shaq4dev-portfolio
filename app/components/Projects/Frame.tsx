@@ -2,12 +2,13 @@
 
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
+// import {StackContext} from "@/app/context/StackContext";
 import Image from 'next/image'
 import Link from 'next/link'
 
 // image import
 import Dummy from '@/public/dummy.jpg'
-import bbx from '@/public/bbx.png'
+// import bbx from '@/public/bbx.png'
 import nextjs from "@/public/brands/nextjs.png";
 import html5 from "@/public/brands/html5.png";
 import css3 from "@/public/brands/css3.png";
@@ -64,9 +65,9 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                                                             "max-h-64 col-span-2" : null
                 } 
             ${theme === 'light' ? 'bg-zinc-600/20' : 'bg-zinc-800'}
-                    rounded-md overflow-hidden relative hidden md:block`
+                    rounded-md overflow-hidden relative hidden md:block duration-500`
             }>
-                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-yellow-900/50 bottom-0 left-0  w-full h-full px-8`}>
+                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-main_overlay/50 bottom-0 left-0  w-full h-full px-8`}>
                     <div className={`${
                         l === 1 ? "text-6xl pt-20 pb-12" :
                             ( l === 2 || l === 3 ) ? "text-5xl pt-16 pb-10" :
@@ -117,7 +118,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         </div>
 
                         <Link href={item.url} target='_blank'>
-                            <div className="bg-yellow-600 rounded-md py-2 px-3 cursor-pointer hover:bg-yellow-700 duration-200 font-semibold">View Project</div>
+                            <div className="bg-main rounded-md py-2 px-3 cursor-pointer hover:bg-main_hover duration-200 font-semibold">View Project</div>
                         </Link>
 
                     </div>
@@ -128,7 +129,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
         {/*mobile*/}
 
             <div className="rounded-md overflow-hidden relative block h-52 md:hidden">
-                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-yellow-900/50 bottom-0 left-0  w-full h-full px-8`}>
+                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-main_overlay/50 bottom-0 left-0  w-full h-full px-8`}>
                     <div className="font-black text-3xl py-3">{item.label}</div>
                     <div className="font-medium text-sm pt-2 pb-1">{
                         item.description.split(" ").slice(0, 20).join(" ") + "..."
@@ -145,7 +146,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         </div>
 
                         <Link href={item.url} target='_blank'>
-                            <div className="bg-yellow-600 rounded-md py-2 px-3 cursor-pointer hover:bg-yellow-700 duration-200 font-semibold">View Project</div>
+                            <div className="bg-main rounded-md py-2 px-3 cursor-pointer hover:bg-main_hover duration-200 font-semibold">View Project</div>
                         </Link>
 
                     </div>

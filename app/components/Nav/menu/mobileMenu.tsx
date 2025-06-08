@@ -2,12 +2,8 @@ import { menuObject } from "@/lib/static";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
 import Hamburger from "./hamburger";
-import { FaSun } from "react-icons/fa";
-import { FaMoon } from "react-icons/fa";
-
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
-import {ThemeDispatchContext} from "@/app/context/ThemeContext";
 import ThemeButton from "@/app/components/Nav/ThemeButton";
 
 const MobileMenu = ({
@@ -23,7 +19,6 @@ const MobileMenu = ({
 }) => {
 
     const theme = useContext(ThemeContext)
-    const dispatch = useContext(ThemeDispatchContext)
 
   return (
     <>
@@ -34,7 +29,7 @@ const MobileMenu = ({
       />
 
         <div className={`
-        ${toggleHam ? theme === 'light' ? 'bg-light-primary shadow-xl z-20' : 'bg-dark-primary shadow-xl z-20' : "-translate-y-[35rem] bg-purple-800"}
+        ${toggleHam ? theme === 'light' ? 'bg-light-primary shadow-xl z-20' : 'bg-dark-primary shadow-xl z-20' : "-translate-y-[35rem] bg-main"}
         flex md:hidden w-screen
         ${toggle ? "h-[38rem]" : "h-[30rem]"}
          bg-black fixed left-0 top-0 duration-500 flex-col
@@ -62,14 +57,14 @@ const MobileMenu = ({
                                 // might use a contact form for contact button instead of linkedin and github links
 
                                 <div key={item.id} className='w-full'>
-                                    <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-light-hover' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
+                                    <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
                                         <div className="font-medium">{item.label}</div>
                                         <FaAngleRight className="text-gray-300 group-hover:text-gray-500 duration-200" />
                                     </Link>
                                 </div>
                             ): (
                             <div key={item.id} className='w-full'>
-                                <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-light-hover' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
+                                <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
                                     <div className="font-medium">{item.label}</div>
                                     <FaAngleRight className="text-gray-300 group-hover:text-gray-500 duration-200" />
                                 </Link>

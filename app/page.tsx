@@ -66,13 +66,12 @@ const Landing = () => {
                    ))
                }
            </div>
-
-           {/*Projects Wrapper */}
-
             <ProjectByStack />
-
-
        </StackContextProvider>
+
+        <div id="tech-stack" className="mx-6 md:mx-16">
+          <StackSection />
+        </div>
 
     </div>
   );
@@ -102,14 +101,3 @@ const StackArr = [
         id: 'wordpress',
     },
 ]
-
-
-{/*<div id="bio" className="w-full h-[60rem] md:h-[100%]">*/}
-{/*  <BiographySection />*/}
-{/*</div>*/}
-{/*<div id="projects" className="w-full">*/}
-{/*  <ProjectSection />*/}
-{/*</div>*/}
-{/*<div id="tech-stack" className="w-full">*/}
-{/*  <StackSection />*/}
-{/*</div>*/}
