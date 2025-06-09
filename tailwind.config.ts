@@ -14,6 +14,11 @@ export default {
         main_overlay: '#0f172a', // Almost black-navy for overlays or backgrounds
         mainlow: '#3b82f6',      // Bright Blue Accent (for subtle highlights)
         mainlow_hover: '#2563eb', // Smooth hover state for lighter elements
+        golden: '#eab308',         // Golden Yellow (attention-grabbing, vibrant)
+        golden_hover: '#ca8a04',   // Deeper golden tone for hover state
+        // main_overlay: '#78350f', // Rich amber/brown overlay for depth
+        golden_bright: '#facc15',      // Softer highlight for borders/buttons
+        goldenlow_hover: '#d97706',
         light: {
           primary: '#FFF8F0',
           secondary: '#0D160B',
