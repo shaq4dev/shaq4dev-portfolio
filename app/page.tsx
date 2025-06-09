@@ -10,6 +10,8 @@ import ProjectByStack from "@/app/components/Projects/ProjectByStack";
 import StackSection from "@/app/components/Stack/stackSection";
 import Link from 'next/link'
 import {menuObject} from "@/lib/static";
+import Modal from "@/app/components/Modal";
+import {ModalContext} from "@/app/context/ModalContext";
 
 const date = new Date()
 const year = date.getFullYear()
@@ -17,12 +19,16 @@ const year = date.getFullYear()
 const Landing = () => {
 
     const theme = useContext(ThemeContext)
+    const {modalToggle} = useContext(ModalContext)
     const contact = menuObject.find(f => f.id.includes('contact'))
 
     // absolute top-36 md:top-32 lg:left-36
 
   return (
     <div className="relative w-full"> {/*px-5 md:px-16*/}
+        {
+            modalToggle ? <Modal /> : null
+        }
         <div id="bio"/>
 
             <div className="absolute w-screen">
@@ -36,11 +42,11 @@ const Landing = () => {
                             <h3 className='font-semibold text-2xl md:text-4xl'>Crafting beautiful, responsive digital experiences for modern brands.</h3>
                             <p className='text-md md:text-xl md:px-5 lg:px-0'>I design and build accessible, user-first web and mobile apps with performance and aesthetics in mind.</p>
                         </div>
-                        <div className="flex flex-col gap-2 cta my-10 md:flex-row md:gap-5">
-                            <CtaBtn  icon='view' />
-                            <CtaBtn  icon='resume' />
-                            <CtaBtn  icon='collab' />
-                        </div>
+                            <div className="flex flex-col gap-2 cta my-10 md:flex-row md:gap-5">
+                                <CtaBtn  icon='view' />
+                                <CtaBtn  icon='resume' />
+                                <CtaBtn  icon='collab' />
+                            </div>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import Backdrop from "./components/Backdrop";
 import ResumeSection from "./components/Resume/resumeSection";
 import Decorate from "./Decorate";
 import GlobalTheme from '@/app/context/ThemeContext'
+import ModalProvider from "@/app/context/ModalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,9 @@ export default function RootLayout({
       >
       <GlobalTheme>
         <Navigation />
-        {children}
+        <ModalProvider>
+            {children}
+        </ModalProvider>
         <BackToTop />
       </GlobalTheme>
       </body>
