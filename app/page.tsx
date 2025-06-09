@@ -25,9 +25,9 @@ const Landing = () => {
     // absolute top-36 md:top-32 lg:left-36
 
   return (
-    <div className="relative w-full"> {/*px-5 md:px-16*/}
+    <div className={modalToggle ? "overflow-y-hidden" : "relative w-full"}> {/*px-5 md:px-16*/}
         {
-            modalToggle ? <Modal /> : null
+            modalToggle ? <div className='duration-500'><Modal /></div> : null
         }
         <div id="bio"/>
 

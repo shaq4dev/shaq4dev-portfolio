@@ -1,18 +1,17 @@
 'use client'
 
-import {useContext, useState} from 'react'
+import {useContext} from 'react'
 import {ThemeContext} from '@/app/context/ThemeContext'
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import { RiPagesLine } from "react-icons/ri";
 import { PiHandshakeLight } from "react-icons/pi";
 import Link from "next/link";
 import {ModalContext} from "@/app/context/ModalContext";
-import Modal from '@/app/components/Modal'
 
 export default function CtaBtn ({icon}: {icon: string}){
 
     const theme = useContext(ThemeContext)
-    const {modalToggle, setModalToggle} = useContext(ModalContext)
+    const {setModalType, setModalToggle} = useContext(ModalContext)
 
     return (
 
@@ -39,7 +38,10 @@ export default function CtaBtn ({icon}: {icon: string}){
                 </div>
             </Link>
         ) : (
-            <button onClick={() => setModalToggle(true)} className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center justify-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
+            <button onClick={() => {
+                setModalToggle(true)
+                setModalType('contact')
+            }} className={`${theme === 'light' ? 'border-dark-primary/70 hover:border-dark-primary/50 hover:text-dark-primary/50' : 'border-light-primary/70 hover:border-light-primary/50 hover:text-light-primary/50'} flex items-center justify-center gap-3 duration-200 rounded-md border-2 px-4 py-3`}>
                 {
                     icon === 'view' ? <MdOutlineRocketLaunch /> : icon === 'resume' ? <RiPagesLine/> : <PiHandshakeLight/>
                 }

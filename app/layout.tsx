@@ -36,11 +36,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative `}
       >
       <GlobalTheme>
-        <Navigation />
-        <ModalProvider>
+          <ModalProvider>
+            <Navigation />
+
             {children}
-        </ModalProvider>
-        <BackToTop />
+
+            <BackToTop />
+          </ModalProvider>
       </GlobalTheme>
       </body>
     </html>

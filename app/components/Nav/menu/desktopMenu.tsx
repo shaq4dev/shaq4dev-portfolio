@@ -5,6 +5,7 @@ import Link from "next/link";
 import ThemeButton from "@/app/components/Nav/ThemeButton";
 import {ThemeContext} from "@/app/context/ThemeContext";
 import {useContext} from 'react'
+import {ModalContext} from "@/app/context/ModalContext";
 
 const DesktopMenu = ({
   toggle,
@@ -15,6 +16,7 @@ const DesktopMenu = ({
 }) => {
 
   const theme = useContext(ThemeContext)
+  const {setModalToggle, setModalType} = useContext(ModalContext)
 
   return (
     <>
@@ -33,7 +35,10 @@ const DesktopMenu = ({
 
             {menuObject.map((item) =>
                 <button
-                    onClick={() => alert('modal for contact form trigger')}
+                    onClick={() => {
+                      setModalToggle(true)
+                      setModalType('contact')
+                    }}
                     key={item.id}
                     className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover'} text-lg cursor-pointer  hover:bg-opacity-80 h-14 w-24 flex items-center justify-center duration-200 font-medium capitalize`}
                 >

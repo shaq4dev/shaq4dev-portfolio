@@ -5,6 +5,7 @@ import Hamburger from "./hamburger";
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
 import ThemeButton from "@/app/components/Nav/ThemeButton";
+import {ModalContext} from "@/app/context/ModalContext";
 
 const MobileMenu = ({
   toggle,
@@ -19,6 +20,7 @@ const MobileMenu = ({
 }) => {
 
     const theme = useContext(ThemeContext)
+    const {modalToggle, setModalToggle, setModalType} = useContext(ModalContext)
 
   return (
     <>
@@ -57,7 +59,10 @@ const MobileMenu = ({
                                 // might use a contact form for contact button instead of linkedin and github links
 
                                 <div key={item.id} className='w-full'>
-                                    <button onClick={() => alert('Modal for contact')} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
+                                    <button onClick={() => {
+                                        setModalToggle(true)
+                                        setModalType('contact')
+                                    }} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
                                         <div className="font-medium">{item.label}</div>
                                         <FaAngleRight className="text-gray-300 group-hover:text-gray-500 duration-200" />
                                     </button>
