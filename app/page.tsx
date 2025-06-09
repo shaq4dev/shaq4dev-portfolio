@@ -32,7 +32,7 @@ const Landing = () => {
                 > {/*w-[90%]*/}
                     <div className="flex flex-col items-center "> {/*mt-28 lg:mt-52*/}
                         <div className="text-center flex flex-col gap-3 lg:gap-5 w-[90%] lg:w-3/4 xl:w-1/2">
-                            <h1 className='font-black text-4xl md:text-6xl bg-gradient-to-br from-goldenlow_hover via-golden to-golden_bright bg-clip-text text-transparent py-1'>Front End Developer and UI/UX Designer</h1>
+                            <h1 className={`${theme === 'light' ? "via-main to-mainlow_hover from-main_hover" : "from-goldenlow_hover via-golden to-golden_bright"} font-black text-5xl md:text-6xl lg:text-7xl bg-gradient-to-br bg-clip-text text-transparent py-2`}>Front End Developer and UI/UX Designer</h1>
                             <h3 className='font-semibold text-2xl md:text-4xl'>Crafting beautiful, responsive digital experiences for modern brands.</h3>
                             <p className='text-md md:text-xl md:px-5 lg:px-0'>I design and build accessible, user-first web and mobile apps with performance and aesthetics in mind.</p>
                         </div>
