@@ -2,16 +2,18 @@
 
 import {useContext} from "react";
 import {StackContext} from "@/app/context/StackContext";
+import {ThemeContext} from "@/app/context/ThemeContext";
+import {ModalContext} from '@/app/context/ModalContext';
+import {IdContext} from "@/app/context/IdContext";
 import {useFetch} from "@/app/hooks/useFetch"
 import Frame from './Frame'
-import {ThemeContext} from "@/app/context/ThemeContext";
-import {ModalContext} from '@/app/context/ModalContext'
 import {stackList, titles} from "@/lib/stacklist";
 
 export default function StackView(){
 
     const {current} = useContext(StackContext)
     const theme =  useContext(ThemeContext)
+    const {id, setId} = useContext(IdContext)
     const {setModalToggle, setModalType} = useContext(ModalContext)
     const {data: projects, loading: projectsLoading, errorMsg: projectsError} = useFetch('/api/projects')
 
@@ -70,6 +72,7 @@ export default function StackView(){
 
             <div className="flex justify-center">
                 {maxProject.length > 8 && <button onClick={() => {
+                    setId(current)
                     setModalType('projects')
                     setModalToggle(true)
                 }} className={`${theme === 'light' ? 'border-dark-primary text-dark-primary' : 'border-light-primary text-light-primary'} duration-500 rounded-md border-2 py-2 px-3`}>See More</button>

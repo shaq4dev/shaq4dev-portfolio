@@ -19,9 +19,11 @@ export default function ProjectsListModal(){
     const {current} = useContext(StackContext)
     const {data: projects} = useFetch('/api/projects')
     const theme = useContext(ThemeContext)
+    const {id} = useContext(IdContext)
+
 
     const latestProjx = [...projects].reverse()
-    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
+    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[id])) // when ready to make the filterable changes
 
     return (
         <div className='h-[28.5rem] md:h-[31rem] rounded-lg'>
@@ -38,7 +40,7 @@ export default function ProjectsListModal(){
 
             {/*content */}
 
-            <h3 className={`${theme === 'light' ? "text-dark-primary/30" : "text-light-primary/30"} font-black capitalize text-3xl mx-6`} >{stackList[current]}</h3>
+            <h3 className={`${theme === 'light' ? "text-dark-primary/30" : "text-light-primary/30"} font-black capitalize text-3xl mx-6`} >{stackList[id]}</h3>
 
             {/*project list */}
 
