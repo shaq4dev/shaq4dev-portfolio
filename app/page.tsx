@@ -59,19 +59,19 @@ const Landing = () => {
       {/*Main Stack*/}
 
        <StackContextProvider>
-           <div className="flex gap-4 my-4 pt-12 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
-               {
-                   StackArr.map((item: any, index: number) => (
-                       <div key={item.id} className='flex items-center'>
-                           <TechStack i={index} id={item.id}/>
-                       </div>
-                   ))
-               }
-           </div>
-           <div className="pb-6 md:pb-12"  id="projects"></div>
-           <div className=''>
-               <ProjectByStack />
-           </div>
+               <div className="flex gap-4 my-4 pt-12 md:gap-12 md:my-0 lg:gap-8 mx-5 justify-center">
+                   {
+                       StackArr.map((item: any, index: number) => (
+                           <div key={item.id} className='flex items-center'>
+                               <TechStack i={index} id={item.id}/>
+                           </div>
+                       ))
+                   }
+               </div>
+               <div className="pb-6 md:pb-12"  id="projects"></div>
+               <div className=''>
+                   <ProjectByStack />
+               </div>
        </StackContextProvider>
 
         <div className="pb-16 md:pb-20"  id="tech-stack"></div>

@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative`}
       >
       <GlobalTheme>
           <ModalProvider>

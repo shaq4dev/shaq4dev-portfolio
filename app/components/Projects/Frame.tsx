@@ -5,6 +5,7 @@ import {ThemeContext} from "@/app/context/ThemeContext";
 // import {StackContext} from "@/app/context/StackContext";
 import Image from 'next/image'
 import Link from 'next/link'
+import {brandMap} from "@/lib/stacklist";
 
 // image import
 import Dummy from '@/public/dummy.jpg'
@@ -107,13 +108,24 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         ) ? item.description.split(" ").slice(0, 20).join(" ") + "..." : item.description
                     }</div>
                     <div className="flex justify-between items-center">
-                        <div className='flex gap-1'>
+                        <div className='flex gap-1 items-center'>
                             {
-                                item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
-                                    {
-                                        <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
-                                    }
-                                </div>)
+                                item.technologies.length > 3 ? (
+                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                        {
+                                            <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
+                                        }
+                                    </div>).splice(0, 3)
+                                ) : (
+                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                        {
+                                            <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
+                                        }
+                                    </div>)
+                                )
+                            }
+                            {
+                                item.technologies.length > 3 ? <div className="text-sm font-bold">+More</div> : null
                             }
                         </div>
 
@@ -135,13 +147,24 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         item.description.split(" ").slice(0, 20).join(" ") + "..."
                     }</div>
                     <div className="flex justify-between items-center">
-                        <div className='flex gap-1'>
+                        <div className='flex gap-1 items-center gap-1'>
                             {
-                                item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                item.technologies.length > 4 ? (
+                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                        {
+                                            <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
+                                        }
+                                    </div>).splice(0, 3)
+                                ) : (
+                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
                                     {
                                         <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                     }
                                 </div>)
+                                )
+                            }
+                            {
+                                item.technologies.length > 4 ? <div className="text-sm font-bold">+More</div> : null
                             }
                         </div>
 
@@ -158,31 +181,3 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
     )
 }
 
-const brandMap: Record<string, any> = {
-    nextjs,
-    html5,
-    css3,
-    javascript,
-    typescript,
-    expo,
-    reactjs,
-    tailwindcss,
-    nativewind,
-    reactnative,
-    shadcnui,
-    mongodb,
-    mongoose,
-    prisma,
-    postgresql,
-    firebase,
-    squarespace,
-    wix,
-    wordpress,
-    elementorpro,
-    gimp,
-    figma,
-    photoshop,
-    illustrator,
-    nextintl,
-    vercel
-}
