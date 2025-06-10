@@ -35,7 +35,7 @@ const Navigation = () => {
         id="top"
         className={`${bgPresent ? "shadow-lg backdrop-blur" : null} duration-500 flex fixed z-10 w-full px-5 md:px-16 py-4 items-center md:justify-between`}
       >
-        <h1 className="font-black text-2xl md:hidden lg:block xl:text-4xl md:min-w-96">Shaquille Blackwood</h1>
+        <h1 className={`${bgPresent && theme === 'light' ? "bg-gradient-to-tr from-main to-mainlow via-mainlow_hover bg-clip-text text-transparent" : bgPresent && theme === 'dark' ? "bg-gradient-to-tr from-goldenlow_hover to-golden_bright via-golden bg-clip-text text-transparent" : ""} duration-300 font-black text-2xl md:hidden lg:block xl:text-4xl md:min-w-96`}>Shaquille Blackwood</h1>
 
         {/* mobile */}
 
