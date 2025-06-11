@@ -2,40 +2,11 @@
 
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
-// import {StackContext} from "@/app/context/StackContext";
 import Image from 'next/image'
 import Link from 'next/link'
 import {brandMap} from "@/lib/stacklist";
 
-// image import
 import Dummy from '@/public/dummy.jpg'
-// import bbx from '@/public/bbx.png'
-import nextjs from "@/public/brands/nextjs.png";
-import html5 from "@/public/brands/html5.png";
-import css3 from "@/public/brands/css3.png";
-import javascript from "@/public/brands/javascript.png";
-import typescript from "@/public/brands/typescript.png";
-import expo from "@/public/brands/expo.png";
-import reactjs from "@/public/brands/react.png";
-import tailwindcss from "@/public/brands/tailwind.png";
-import nativewind from "@/public/brands/nativewind.png";
-import reactnative from "@/public/brands/reactnative.png";
-import shadcnui from "@/public/brands/shadcnui.png";
-import mongodb from "@/public/brands/mongodb.png";
-import mongoose from "@/public/brands/mongoose.png";
-import prisma from "@/public/brands/prisma.png";
-import postgresql from "@/public/brands/postgresql.png";
-import firebase from "@/public/brands/firebase.png";
-import squarespace from "@/public/brands/squarespace.png";
-import wix from "@/public/brands/wix.png";
-import wordpress from "@/public/brands/wordpress.png";
-import elementorpro from "@/public/brands/elementorpro.png";
-import gimp from "@/public/brands/gimp.png";
-import figma from "@/public/brands/figma.png";
-import photoshop from "@/public/brands/photoshop.png";
-import illustrator from "@/public/brands/illustrator.png";
-import nextintl from '@/public/brands/nextintl.png'
-import vercel from '@/public/brands/vercel.png'
 
 export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
@@ -68,7 +39,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
             ${theme === 'light' ? 'bg-zinc-600/20' : 'bg-zinc-800'}
                     rounded-md overflow-hidden relative hidden md:block duration-500`
             }>
-                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-main_overlay/50 bottom-0 left-0  w-full h-full px-8`}>
+                <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '} absolute flex flex-col bottom-0 left-0  w-full h-full px-8`}>
                     <div className={`${
                         l === 1 ? "text-6xl pt-20 pb-12" :
                             ( l === 2 || l === 3 ) ? "text-5xl pt-16 pb-10" :
@@ -86,8 +57,8 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                     } font-black`}>{item.label}</div>
                     <div className={`${
                         l === 1 ? "text-2xl pb-5" :
-                            ( l === 2 || l === 3 ) ? "text-xl pb-5" :
-                                l === 3 ? "text-2xl pb-5" :
+                            ( l === 2 ) ? "text-xl pb-5" :
+                                l === 3 ? "text-md pb-5" :
                                     l === 4 && i === 0 ? "text-xl pb-2" :
                                         l === 4 ? "text-md pb-3" :
                                             l === 5 && (i === 0 || i === 4) ? "text-xl pb-2":
@@ -105,7 +76,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             (l === 6 && (i === 1 || i === 2 || i === 5)) ||
                             (l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5)) ||
                             ( l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6))
-                        ) ? item.description.split(" ").slice(0, 20).join(" ") + "..." : item.description
+                        ) ? item.description.split(" ").slice(0, 15).join(" ") + "..." : item.description
                     }</div>
                     <div className="flex justify-between items-center">
                         <div className='flex gap-1 items-center'>
@@ -130,7 +101,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         </div>
 
                         <Link href={item.url} target='_blank'>
-                            <div className="bg-main rounded-md py-2 px-3 cursor-pointer hover:bg-main_hover duration-200 font-semibold">View Project</div>
+                            <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold`}>View Project</div>
                         </Link>
 
                     </div>
@@ -144,7 +115,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                 <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-main_overlay/50 bottom-0 left-0  w-full h-full px-8`}>
                     <div className="font-black text-3xl py-3">{item.label}</div>
                     <div className="font-medium text-sm pt-2 pb-1">{
-                        item.description.split(" ").slice(0, 20).join(" ") + "..."
+                        item.description.split(" ").slice(0, 15).join(" ") + "..."
                     }</div>
                     <div className="flex justify-between items-center">
                         <div className='flex gap-1 items-center gap-1'>
@@ -169,7 +140,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         </div>
 
                         <Link href={item.url} target='_blank'>
-                            <div className="bg-main rounded-md py-2 px-3 cursor-pointer hover:bg-main_hover duration-200 font-semibold">View Project</div>
+                            <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold`}>View Project</div>
                         </Link>
 
                     </div>
