@@ -8,19 +8,20 @@ import {IdContext} from "@/app/context/IdContext";
 import {useFetch} from "@/app/hooks/useFetch"
 import Frame from './Frame'
 import {stackList, titles} from "@/lib/stacklist";
+import {ProjectProps} from "@/lib/props";
 
 export default function StackView(){
 
     const {current} = useContext(StackContext)
     const theme =  useContext(ThemeContext)
-    const {id, setId} = useContext(IdContext)
+    const {setId} = useContext(IdContext)
     const {setModalToggle, setModalType} = useContext(ModalContext)
     const {data: projects, loading: projectsLoading, errorMsg: projectsError} = useFetch('/api/projects')
 
     // latest projects test
 
     const latestProjx = [...projects].reverse()
-    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
+    const filteredProj = latestProjx.filter((i: ProjectProps) => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
     const maxProject = filteredProj
     const defaultProject = filteredProj.slice(0, 8)
 

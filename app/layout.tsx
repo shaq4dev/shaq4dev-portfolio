@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Nav/navigation";
 import BackToTop from "./components/Nav/backToTop";
-import Backdrop from "./components/Backdrop";
-import ResumeSection from "./components/Resume/resumeSection";
-import Decorate from "./Decorate";
 import GlobalTheme from '@/app/context/ThemeContext'
 import ModalProvider from "@/app/context/ModalContext";
 

@@ -21,7 +21,7 @@ export function useFetch(url: string){
 
             setLoading(false)
 
-        } catch(error){
+        } catch(error: any){
             console.log(error)
             setErrorMsg(error.message)
             setLoading(false)

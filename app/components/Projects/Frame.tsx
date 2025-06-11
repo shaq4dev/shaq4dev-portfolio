@@ -82,13 +82,13 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         <div className='flex gap-1 items-center'>
                             {
                                 item.technologies.length > 3 ? (
-                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                    item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                         {
                                             <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                         }
                                     </div>).splice(0, 3)
                                 ) : (
-                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                    item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                         {
                                             <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                         }
@@ -121,13 +121,13 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         <div className='flex gap-1 items-center gap-1'>
                             {
                                 item.technologies.length > 4 ? (
-                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                    item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                         {
                                             <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                         }
                                     </div>).splice(0, 3)
                                 ) : (
-                                    item.technologies.map((i, index) => <div key={index} className='py-4 flex gap-2'>
+                                    item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                     {
                                         <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                     }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useReducer, useContext, useEffect } from "react";
+import { useState, useReducer, useContext } from "react";
 import { ModalContext } from "@/app/context/ModalContext";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import { IoIosClose } from "react-icons/io";
@@ -102,8 +102,8 @@ export default function ContactForm() {
                     setGeneralError(result.error);
                 }
             }
-        } catch (err) {
-            setGeneralError("Something went wrong. Please try again.");
+        } catch (err: any) {
+            setGeneralError(err);
         } finally {
             setIsSending(false);
         }

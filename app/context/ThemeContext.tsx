@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
+type ThemeAction = { type: 'trigger' }
+
 export const ThemeContext = createContext("")
-export const ThemeDispatchContext = createContext<React.Dispatch<null> | null>(null)
+export const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(null)
 
 type ThemeProps = 'light' | 'dark'
 
@@ -60,7 +62,7 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
 
 // reducer (f)
 
-function themeReducer (theme: ThemeProps, action: any){
+function themeReducer (theme: ThemeProps, action: ThemeAction){
 
     switch (action.type){
         case 'trigger': return theme === 'light' ? 'dark' : 'light'

@@ -26,8 +26,8 @@ export default function GridLightAnimation() {
     const setup = (p5: p5Types, canvasParentRef: Element) => {
         const canvas = p5.createCanvas(p5.windowWidth, 700)
         canvas.parent(canvasParentRef)
-        p5.frameRate(60)
-        p5.clear()
+        p5.frameRate(60);
+        (p5 as any).clear()
         dots = []
 
         for (let y = 0; y < p5.height; y += gridSize) {
@@ -53,7 +53,7 @@ export default function GridLightAnimation() {
     }
 
     const draw = (p5: p5Types) => {
-        p5.clear()
+        (p5 as any).clear()
 
         // Update mouse pos globally
         mouseXPos = p5.mouseX

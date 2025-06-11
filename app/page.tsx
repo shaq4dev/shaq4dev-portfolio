@@ -17,11 +17,24 @@ import IdContextProvider from "@/app/context/IdContext";
 const date = new Date()
 const year = date.getFullYear()
 
+type ContactType = {
+    id: string;
+    label: string;
+    url: string;
+} | {
+    id: string;
+    label: string;
+    url: {
+        linkedIn: string;
+        github: string;
+    };
+} | undefined
+
 const Landing = () => {
 
     const theme = useContext(ThemeContext)
     const {modalToggle} = useContext(ModalContext)
-    const contact = menuObject.find(f => f.id.includes('contact'))
+    const contact: ContactType = menuObject.find(f => f.id.includes('contact'))
 
     // absolute top-36 md:top-32 lg:left-36
 
@@ -47,7 +60,7 @@ const Landing = () => {
                             <div className="flex flex-col gap-2 cta my-10 md:flex-row md:gap-5">
                                 <CtaBtn  icon='view' />
                                 <CtaBtn  icon='resume' />
-                                <CtaBtn  icon='collab' />
+                                <CtaBtn  icon='contact' />
                             </div>
                     </div>
                 </div>
@@ -90,8 +103,23 @@ const Landing = () => {
                 © {year}. All Rights Reserved.
             </div>
             <div className='flex items-center gap-1 '>
-                <Link href={contact.url.github} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline  hover:text-light-primary duration-200 font-semibold`}>Github</Link>
-                <Link href={contact.url.linkedIn} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline hover:text-light-primary duration-200 font-semibold`}>LinkedIn</Link>
+                {
+                    typeof contact?.url === 'object' && contact?.url !== null ? (
+                        <>
+                            <Link href={contact.url.github} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline  hover:text-light-primary duration-200 font-semibold`}>Github</Link>
+                        </>
+                    ) : null
+                }
+
+                {
+                    typeof contact?.url === 'object' && contact?.url !== null ? (
+                        <>
+                            <Link href={contact.url.linkedIn} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline hover:text-light-primary duration-200 font-semibold`}>LinkedIn</Link>
+                        </>
+                    ) : null
+                }
+
+
             </div>
         </div>
 

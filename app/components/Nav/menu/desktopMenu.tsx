@@ -7,13 +7,7 @@ import {ThemeContext} from "@/app/context/ThemeContext";
 import {useContext} from 'react'
 import {ModalContext} from "@/app/context/ModalContext";
 
-const DesktopMenu = ({
-  toggle,
-  setToggle,
-}: {
-  toggle: boolean;
-  setToggle: (toggle: boolean) => void;
-}) => {
+const DesktopMenu = () => {
 
   const theme = useContext(ThemeContext)
   const {setModalToggle, setModalType} = useContext(ModalContext)

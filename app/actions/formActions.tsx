@@ -26,14 +26,12 @@ export async function contactFormAction(formData: FormData) {
 
     const result = Contact.safeParse(rawFormData)
 
-    console.log("Validation result:", result)
-
     if (!result.success) {
         // Manual formatting of the error messages
-        const errors = result.error.errors.map(err => ({
-            field: err.path.join('.'),
-            message: err.message,
-        }))
+        // const errors = result.error.errors.map(err => ({
+        //     field: err.path.join('.'),
+        //     message: err.message,
+        // }))
 
         return {
             success: false,
@@ -54,8 +52,6 @@ export async function contactFormAction(formData: FormData) {
             },
         })
 
-        console.log("Sending email...")
-
         await transporter.sendMail({
             from: `"${data.firstname} ${data.lastname}" <${data.email}>`,
             to: process.env.CONTACT_RECEIVER_EMAIL,
@@ -71,8 +67,6 @@ export async function contactFormAction(formData: FormData) {
       <p>${data.message}</p>
     `
         })
-
-        console.log("Email sent successfully")
 
         return { success: true }
 

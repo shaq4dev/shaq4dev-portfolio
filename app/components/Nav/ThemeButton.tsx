@@ -7,6 +7,8 @@ import {FaMoon, FaSun} from "react-icons/fa";
 export default function ThemeButton(){
     const theme = useContext(ThemeContext)
     const dispatch = useContext(ThemeDispatchContext)
+
+    if(!dispatch) throw new Error ("ThemeDispatchContext Not Provided")
     return (
         <div className={`${theme === 'light' ? "border-mainlow/20" : "border-golden_bright/15"} border-2 rounded-full cursor-pointer`} onClick={() => dispatch({type: 'trigger'})}>
             {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import MobileMenu from "./menu/mobileMenu";
 import DesktopMenu from "./menu/desktopMenu";
 import {useContext} from 'react'
@@ -48,7 +48,7 @@ const Navigation = () => {
 
         {/* desktop */}
 
-        <DesktopMenu toggle={toggle} setToggle={setToggle} />
+        <DesktopMenu />
       </nav>
     </>
   );

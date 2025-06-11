@@ -11,17 +11,18 @@ import {brandMap} from "@/lib/stacklist";
 import Link from "next/link";
 import {ThemeContext} from "@/app/context/ThemeContext";
 import {IdContext} from "@/app/context/IdContext";
+import {ProjectProps} from "@/lib/props";
 
 export default function ProjectsListModal(){
 
     const {modalToggle, setModalToggle} = useContext(ModalContext)
-    const {data: projects} = useFetch('/api/projects')
+    const {data: projects = []} = useFetch('/api/projects')
     const theme = useContext(ThemeContext)
     const {id} = useContext(IdContext)
 
 
     const latestProjx = [...projects].reverse()
-    const filteredProj = latestProjx.filter(i => i.technologies.includes(stackList[id])) // when ready to make the filterable changes
+    const filteredProj = latestProjx.filter((i: ProjectProps) => i.technologies.includes(stackList[id])) // when ready to make the filterable changes
 
     return (
         <div className='h-[28.5rem] md:h-[31rem] rounded-lg'>
@@ -57,7 +58,7 @@ export default function ProjectsListModal(){
                                             i.technologies.map((item: any, _i: number) => (
                                                 <div key={_i} className='inline-flex '>
                                                     {
-                                                        <Image src={brandMap[item]} alt={_i} className={`rounded-full w-6 h-6 bg-white`}/>
+                                                        <Image src={brandMap[item]} alt={_i.toString()} className={`rounded-full w-6 h-6 bg-white`}/>
                                                     }
                                                 </div>
                                             )).slice(0, 4)
@@ -65,7 +66,7 @@ export default function ProjectsListModal(){
                                             i.technologies.map((item: any, _i: number) => (
                                                 <div key={_i} className='inline-flex '>
                                                     {
-                                                        <Image src={brandMap[item]} alt={_i} className={`rounded-full w-6 h-6 bg-white`}/>
+                                                        <Image src={brandMap[item]} alt={_i.toString()} className={`rounded-full w-6 h-6 bg-white`}/>
                                                     }
                                                 </div>
                                             ))
@@ -80,8 +81,6 @@ export default function ProjectsListModal(){
                                     <div className={`${theme === 'light' ? "hover:bg-main_hover bg-mainlow_hover" : "hover:bg-golden_hover bg-golden_hover"} rounded-md text-light-primary md:py-2 md:px-3 py-2 px-3 cursor-pointer  duration-200 text-sm font-semibold`}>View Project</div>
                                 </Link>
                             </div>
-
-                            {/*<div className={`${i.projectType === 'web' ? "bg-orange-500" : i.projectType === 'ux' ? "bg-yellow-500" : null} top-4 right-0 absolute w-12 bg-opacity-80 h-8 rounded-l-md text-sm flex justify-center items-center capitalize font-bold text-light-primary`}>{i.projectType}</div>*/}
                         </div>
                     </div>)
                 }
