@@ -31,8 +31,8 @@ const MobileMenu = ({
       />
 
         <div className={`
-        ${toggleHam && theme === 'light' ? 'bg-light-primary' : toggleHam && theme === 'dark' ? 'bg-dark-primary' : !toggleHam && theme === 'light' ? "-translate-y-[35rem] bg-main shadow-xl z-20" : !toggleHam && theme === 'dark' ? "-translate-y-[35rem] bg-golden shadow-xl z-20" : null}
-        flex md:hidden w-screen
+        ${toggleHam && theme === 'light' ? 'bg-light-primary' : toggleHam && theme === 'dark' ? 'bg-dark-primary' : !toggleHam && theme === 'light' ? "-translate-y-[35rem] bg-main" : !toggleHam && theme === 'dark' ? "-translate-y-[35rem] bg-golden" : null}
+        flex md:hidden w-screen shadow-xl z-20
         ${toggle ? "h-[38rem]" : "h-[30rem]"}
          bg-black fixed left-0 top-0 duration-500 flex-col
         `}>
@@ -62,16 +62,16 @@ const MobileMenu = ({
                                     <button onClick={() => {
                                         setModalToggle(true)
                                         setModalType('contact')
-                                    }} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
+                                    }} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer`}>
                                         <div className="font-medium">{item.label}</div>
-                                        <FaAngleRight className="text-gray-300 group-hover:text-gray-500 duration-200" />
+                                        <FaAngleRight className="text-gray-300 group-hover:text-gray-500" />
                                     </button>
                                 </div>
                             ): (
                             <div key={item.id} className='w-full'>
-                                <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer duration-200`}>
+                                <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer`}>
                                     <div className="font-medium">{item.label}</div>
-                                    <FaAngleRight className="text-gray-300 group-hover:text-gray-500 duration-200" />
+                                    <FaAngleRight className="text-gray-300 group-hover:text-gray-500" />
                                 </Link>
                             </div>
                         )
