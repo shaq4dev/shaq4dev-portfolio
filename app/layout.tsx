@@ -9,16 +9,6 @@ import Decorate from "./Decorate";
 import GlobalTheme from '@/app/context/ThemeContext'
 import ModalProvider from "@/app/context/ModalContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Shaquille Blackwood",
   description: "Hi, I'm Shaquille! Welcome to my technology & design portfolio",
@@ -32,9 +22,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative`}
-      >
+
       <GlobalTheme>
           <ModalProvider>
             <Navigation />
@@ -44,7 +32,6 @@ export default function RootLayout({
             <BackToTop />
           </ModalProvider>
       </GlobalTheme>
-      </body>
     </html>
   );
 }

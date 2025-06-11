@@ -1,6 +1,17 @@
 'use client'
 
 import React, {createContext, useEffect, useReducer} from 'react'
+import {Geist, Geist_Mono} from "next/font/google";
+
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
 export const ThemeContext = createContext("")
 export const ThemeDispatchContext = createContext<React.Dispatch<null> | null>(null)
@@ -35,9 +46,11 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
     return (
         <ThemeContext.Provider value={theme}>
             <ThemeDispatchContext.Provider value={dispatch}>
+                <body className={`${geistSans.variable} ${geistMono.variable} ${theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'} antialiased overflow-x-hidden relative`}>
                 <div className={`${theme === 'light' ? 'bg-light-primary text-dark-primary' : 'bg-dark-primary text-light-primary'} duration-500`}>
                     {children}
                 </div>
+                </body>
             </ThemeDispatchContext.Provider>
         </ThemeContext.Provider>
     )
