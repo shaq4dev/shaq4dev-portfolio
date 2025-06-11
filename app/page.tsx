@@ -84,14 +84,14 @@ const Landing = () => {
         </div>
 
         <div id="social" className={
-            `${theme === 'light' ? "bg-main_overlay" : "bg-mainlow/50"} h-20 text-light-primary mt-20 flex items-center text-sm gap-2 justify-center`
+            `${theme === 'light' ? "bg-main_overlay text-light-primary" : "bg-goldenlow_hover text-dark-primary"} h-20 mt-20 flex items-center text-sm gap-2 justify-center`
         }>
             <div className=''>
                 © {year}. All Rights Reserved.
             </div>
             <div className='flex items-center gap-1 '>
-                <Link href={contact.url.github} target="_blank" className="github hover:underline text-cyan-300 hover:text-light-primary duration-500">Github</Link>
-                <Link href={contact.url.linkedIn} target="_blank" className="linkedIn hover:underline text-cyan-300 hover:text-light-primary duration-500">LinkedIn</Link>
+                <Link href={contact.url.github} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline  hover:text-light-primary duration-200 font-semibold`}>Github</Link>
+                <Link href={contact.url.linkedIn} target="_blank" className={`${theme === 'light' ? "text-cyan-300" : "text-light-primary hover:text-golden_bright"} github hover:underline hover:text-light-primary duration-200 font-semibold`}>LinkedIn</Link>
             </div>
         </div>
 

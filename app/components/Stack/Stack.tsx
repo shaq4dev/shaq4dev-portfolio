@@ -31,7 +31,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
   }, []);
   return (
     <div className="w-full">
-      <h3 className="font-bold text-lg py-8 text-mainlow capitalize">
+      <h3 className={`${theme === 'light' ? "text-mainlow" : "text-golden_bright"} font-bold text-lg py-8 capitalize`}>
         {label}
       </h3>
 
@@ -42,7 +42,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
             className="group md:flex items-center gap-3 hidden cursor-pointer"
           >
 
-              <div className={`${theme === 'light' ? 'bg-main/20 group-hover:bg-main/10' : 'bg-main_hover/50 group-hover:bg-main_hover/90'}  rounded-full min-w-10 min-h-10 flex justify-center items-center duration-300`}>
+              <div className={`${theme === 'light' ? 'bg-main/20 group-hover:bg-main/10' : 'bg-golden_hover/50 group-hover:bg-golden_hover/90'}  rounded-full min-w-10 min-h-10 flex justify-center items-center duration-300`}>
                   <Image
                       src={i.image}
                       alt={"fs"}
@@ -62,7 +62,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
                 }%`,
                 transition: `${i.since - 2015 < 7 ? "15s" : "5s"} ease-in-out`,
               }}
-              className={`bg-gradient-to-r from-main to-main_hover group-hover:to-mainlow group-hover:from-mainlow_hover text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3 duration-500`}
+              className={`${theme === 'light' ? "bg-gradient-to-r from-main to-main_hover group-hover:to-mainlow group-hover:from-mainlow_hover" : "bg-gradient-to-r from-golden to-golden_hover group-hover:to-golden_bright group-hover:from-goldenlow_hover"} text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3 duration-500`}
             >
               <div className="text-sm font-black">{i.label}</div>
               <div className="text-xs font-semibold">{i.since}</div>
@@ -74,7 +74,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
             key={i.tech}
             className="group flex items-center gap-3 md:hidden cursor-pointer"
           >
-              <div className={`${theme === 'light' ? 'bg-main/20 group-hover:bg-main/10' : 'bg-main_hover/50 group-hover:bg-main_hover/30'}  rounded-full min-w-10 min-h-10 flex justify-center items-center duration-300`}>
+              <div className={`${theme === 'light' ? 'bg-main/20 group-hover:bg-main/10' : 'bg-golden_hover/50 group-hover:bg-golden_hover/90'}  rounded-full min-w-10 min-h-10 flex justify-center items-center duration-300`}>
                   <Image
                       src={i.image}
                       alt={"fs"}
@@ -92,7 +92,7 @@ const Stack = ({ label, type }: { label: string; type?: TypeProps }) => {
                 }%`,
                 transition: `${i.since - 2015 < 7 ? "30s" : "5s"} ease-in-out`,
               }}
-              className="bg-gradient-to-r from-main to-main_hover group-hover:to-mainlow group-hover:from-mainlow_hover text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3"
+              className={`${theme === 'light' ? "bg-gradient-to-r from-main to-main_hover group-hover:to-mainlow group-hover:from-mainlow_hover" : "bg-gradient-to-r from-golden to-golden_hover group-hover:to-golden_bright group-hover:from-goldenlow_hover"} text-white h-[50px] rounded-lg flex flex-col justify-center items-end px-3 duration-500`}
             >
               <div className="text-sm font-black">{i.label}</div>
               <div className="text-xs font-semibold">{i.since}</div>
