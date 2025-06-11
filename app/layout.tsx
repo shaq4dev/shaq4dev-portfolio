@@ -30,15 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
 
+    <ModalProvider>
       <GlobalTheme>
-          <ModalProvider>
             <Navigation />
-
             {children}
-
             <BackToTop />
-          </ModalProvider>
       </GlobalTheme>
+    </ModalProvider>
     </html>
   );
 }

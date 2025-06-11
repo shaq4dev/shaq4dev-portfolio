@@ -1,6 +1,7 @@
 'use client'
 
-import React, {createContext, useEffect, useReducer} from 'react'
+import React, {createContext, useEffect, useReducer, useContext} from 'react'
+import {ModalContext} from "@/app/context/ModalContext";
 import {Geist, Geist_Mono} from "next/font/google";
 
 const geistSans = Geist({
@@ -23,6 +24,7 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
     // reducer call
 
     const [theme, dispatch] = useReducer(themeReducer, null, StorageTheme)
+    const {modalToggle} = useContext(ModalContext)
 
     // local theme
 
@@ -46,7 +48,7 @@ export default function GlobalTheme ({children}: {children: React.ReactNode}){
     return (
         <ThemeContext.Provider value={theme}>
             <ThemeDispatchContext.Provider value={dispatch}>
-                <body className={`${geistSans.variable} ${geistMono.variable} ${theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'} antialiased overflow-x-hidden relative`}>
+                <body className={`${geistSans.variable} ${geistMono.variable} ${theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'} antialiased overflow-x-hidden relative ${modalToggle ? "overflow-y-hidden" : null}`}>
                 <div className={`${theme === 'light' ? 'bg-light-primary text-dark-primary' : 'bg-dark-primary text-light-primary'} duration-500`}>
                     {children}
                 </div>
