@@ -1,3 +1,8 @@
+'use client'
+
+import {useContext} from 'react'
+import {ThemeContext} from "@/app/context/ThemeContext";
+
 const Hamburger = ({
   toggleHam,
   setToggle,
@@ -7,6 +12,8 @@ const Hamburger = ({
   setToggle: (toggle: boolean) => void;
   setToggleHam: (toggleHam: boolean) => void;
 }) => {
+
+  const theme = useContext(ThemeContext)
   return (
     <>
       <div
@@ -20,16 +27,16 @@ const Hamburger = ({
       >
         <div
           className={` ${
-            toggleHam
+            toggleHam && theme === 'light'
               ? "absolute top-0 rotate-45 duration-500 bg-main group-hover:bg-main/90"
-              : "group-hover:bg-main/50 bg-main"
+              : toggleHam && theme === 'dark' ? "absolute top-0 rotate-45 duration-500 bg-golden group-hover:bg-golden/90" : !toggleHam && theme === 'light' ? "group-hover:bg-main/50 bg-main" : !toggleHam && theme === 'dark' ? "group-hover:bg-golden/50 bg-golden" : null
           }  w-8 h-1 duration-500`}
         ></div>
         <div
           className={` ${
-            toggleHam
-              ? "absolute top-0 -rotate-45 duration-500 bg-main group-hover:bg-main/90"
-              : "group-hover:bg-main/50 bg-main"
+              toggleHam && theme === 'light'
+                  ? "absolute top-0 -rotate-45 duration-500 bg-main group-hover:bg-main/90"
+                  : toggleHam && theme === 'dark' ? "absolute top-0 -rotate-45 duration-500 bg-golden group-hover:bg-golden/90" : !toggleHam && theme === 'light' ? "group-hover:bg-main/50 bg-main" : !toggleHam && theme === 'dark' ? "group-hover:bg-golden/50 bg-golden" : null
           } w-8 h-1 duration-500`}
         ></div>
       </div>

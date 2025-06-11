@@ -20,7 +20,7 @@ const MobileMenu = ({
 }) => {
 
     const theme = useContext(ThemeContext)
-    const {modalToggle, setModalToggle, setModalType} = useContext(ModalContext)
+    const {setModalToggle, setModalType} = useContext(ModalContext)
 
   return (
     <>
@@ -31,7 +31,7 @@ const MobileMenu = ({
       />
 
         <div className={`
-        ${toggleHam ? theme === 'light' ? 'bg-light-primary shadow-xl z-20' : 'bg-dark-primary shadow-xl z-20' : "-translate-y-[35rem] bg-main"}
+        ${toggleHam && theme === 'light' ? 'bg-light-primary' : toggleHam && theme === 'dark' ? 'bg-dark-primary' : !toggleHam && theme === 'light' ? "-translate-y-[35rem] bg-main shadow-xl z-20" : !toggleHam && theme === 'dark' ? "-translate-y-[35rem] bg-golden shadow-xl z-20" : null}
         flex md:hidden w-screen
         ${toggle ? "h-[38rem]" : "h-[30rem]"}
          bg-black fixed left-0 top-0 duration-500 flex-col
