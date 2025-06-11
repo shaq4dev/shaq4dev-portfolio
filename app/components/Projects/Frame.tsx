@@ -112,7 +112,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
         {/*mobile*/}
 
             <div className="rounded-md overflow-hidden relative block h-52 md:hidden">
-                <div className={`${theme === 'light' ? ' text-light-primary' : ' text-light-primary'} absolute flex flex-col bg-main_overlay/50 bottom-0 left-0  w-full h-full px-8`}>
+                <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '} absolute flex flex-col bottom-0 left-0  w-full h-full px-8`}>
                     <div className="font-black text-3xl py-3">{item.label}</div>
                     <div className="font-medium text-sm pt-2 pb-1">{
                         item.description.split(" ").slice(0, 15).join(" ") + "..."
