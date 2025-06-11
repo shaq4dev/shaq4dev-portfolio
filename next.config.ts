@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const config: NextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.pixabay.com',
+                port: '',
+                pathname: '/photo/**',
+                search: '',
+            },
+        ],
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    }
+}
 
-export default nextConfig;
+export default config
