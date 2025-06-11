@@ -3,7 +3,6 @@
 import {IoIosClose} from "react-icons/io";
 import {useContext} from "react";
 import {ModalContext} from "@/app/context/ModalContext";
-import {StackContext} from '@/app/context/StackContext'
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import {stackList} from "@/lib/stacklist";
 import {useFetch} from "@/app/hooks/useFetch";
@@ -16,7 +15,6 @@ import {IdContext} from "@/app/context/IdContext";
 export default function ProjectsListModal(){
 
     const {modalToggle, setModalToggle} = useContext(ModalContext)
-    const {current} = useContext(StackContext)
     const {data: projects} = useFetch('/api/projects')
     const theme = useContext(ThemeContext)
     const {id} = useContext(IdContext)
@@ -47,7 +45,9 @@ export default function ProjectsListModal(){
             <ul className='flex flex-col h-full gap-3 mx-6 my-8 overflow-y-scroll '>
                 {
                     filteredProj.map((i: any, index: number) => <div key={index} className="w-full max-h-28 min-h-28 md:max-h-32 md:min-h-32 rounded-lg shadow-md overflow-hidden relative">
-                        <Image src={i.image_url} alt={i.id} width={500} height={500} className='bg-cover w-full backdrop-blur' />
+                        <div className={`${theme === 'light' ? "bg-main" : "bg-golden"} backdrop-blur`}>
+                            <Image src={i.image_url} alt={i.id} width={500} height={500} className={`${theme === 'light' ? "opacity-65" : "opacity-85"} bg-cover w-full`} />
+                        </div>
                         <div className="w-full h-full absolute top-0 left-0 z-10">
                             <div className="font-bold text-xl md:text-2xl px-3 py-5 text-light-primary">{i.label}</div>
                             <div className='w-full px-2 mb-3 flex justify-between items-center gap-1'>
@@ -77,11 +77,11 @@ export default function ProjectsListModal(){
                                 </div>
 
                                 <Link href={i.url} target='_blank'>
-                                    <div className="bg-mainlow_hover rounded-md text-light-primary md:py-2 md:px-3 py-1 px-3 cursor-pointer hover:bg-main_hover duration-200 text-sm font-semibold">View Project</div>
+                                    <div className={`${theme === 'light' ? "hover:bg-main_hover bg-mainlow_hover" : "hover:bg-golden_hover bg-golden_hover"} rounded-md text-light-primary md:py-2 md:px-3 py-2 px-3 cursor-pointer  duration-200 text-sm font-semibold`}>View Project</div>
                                 </Link>
                             </div>
 
-                            <div className={`${i.projectType === 'web' ? "bg-orange-500" : i.projectType === 'ux' ? "bg-yellow-500" : null} top-4 right-0 absolute w-12 bg-opacity-80 h-8 rounded-l-md text-sm flex justify-center items-center capitalize font-bold text-light-primary`}>{i.projectType}</div>
+                            {/*<div className={`${i.projectType === 'web' ? "bg-orange-500" : i.projectType === 'ux' ? "bg-yellow-500" : null} top-4 right-0 absolute w-12 bg-opacity-80 h-8 rounded-l-md text-sm flex justify-center items-center capitalize font-bold text-light-primary`}>{i.projectType}</div>*/}
                         </div>
                     </div>)
                 }
