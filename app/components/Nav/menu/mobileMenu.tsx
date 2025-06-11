@@ -62,6 +62,7 @@ const MobileMenu = ({
                                     <button onClick={() => {
                                         setModalToggle(true)
                                         setModalType('contact')
+                                        setToggleHam(!toggleHam)
                                     }} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer`}>
                                         <div className="font-medium">{item.label}</div>
                                         <FaAngleRight className="text-gray-300 group-hover:text-gray-500" />
@@ -69,7 +70,7 @@ const MobileMenu = ({
                                 </div>
                             ): (
                             <div key={item.id} className='w-full'>
-                                <Link href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer`}>
+                                <Link onClick={() => setToggleHam(!toggleHam)} href={item.url} className={`${theme === 'light' ? 'hover:bg-main/10' : 'hover:bg-dark-hover/50'} w-full px-3 py-3 group flex capitalize items-center justify-between cursor-pointer`}>
                                     <div className="font-medium">{item.label}</div>
                                     <FaAngleRight className="text-gray-300 group-hover:text-gray-500" />
                                 </Link>
