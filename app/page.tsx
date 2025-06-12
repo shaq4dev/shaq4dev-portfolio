@@ -13,6 +13,8 @@ import {menuObject} from "@/lib/static";
 import Modal from "@/app/components/Modal";
 import {ModalContext} from "@/app/context/ModalContext";
 import IdContextProvider from "@/app/context/IdContext";
+import Image from 'next/image'
+import Logo from '@/public/icon.png'
 
 const date = new Date()
 const year = date.getFullYear()
@@ -99,8 +101,12 @@ const Landing = () => {
         <div id="social" className={
             `${theme === 'light' ? "bg-main_overlay text-light-primary" : "bg-goldenlow_hover text-dark-primary"} h-20 mt-20 flex items-center text-sm gap-2 justify-center`
         }>
-            <div className=''>
-                © {year}. All Rights Reserved.
+            <div className='flex items-center gap-1'>
+
+                <Image src={Logo} alt="logo" width={500} height={500} className="w-8 h-8 mx-1" />
+                <span>©</span>
+                <span>{year}.</span>
+                <span>All Rights Reserved.</span>
             </div>
             <div className='flex items-center gap-1 '>
                 {

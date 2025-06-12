@@ -25,7 +25,7 @@ const BackToTop = () => {
       href="/#top"
       className={`${
         cutOffPoint ? "opacity-0 translate-y-12" : "opacity-100"
-      } group fixed bottom-5 right-5 cursor-pointer z-10 duration-500`}
+      } group fixed bottom-14 right-5 cursor-pointer z-10 duration-500`}
     >
       <div className={`${theme === 'light' ? "border-mainlow_hover group-hover:border-main_hover" : "border-golden_bright group-hover:border-golden_hover"} rounded-full border-4 h-11 w-11 flex items-center justify-center duration-200`}>
         <TiArrowUpThick
