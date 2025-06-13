@@ -24,16 +24,16 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
             <div className={
                 `${
-                    l === 1 ? "h-48 md:h-[25rem]" :
-                        l === 2 ? "h-48 md:h-96" :
+                    l === 1 ? "h-48 lg:h-[25rem]" :
+                        l === 2 ? "h-48 lg:h-96" :
                             l === 3 && i === 2 ? "h-48 md:h-80 md:col-span-2" :
-                                l === 3 ? "h-48 md:h-80" :
-                                    l === 4 && i === 0 ? "h-72 col-span-3" :
-                                        l === 4 ? "h-48 md:h-64" :
+                                l === 3 ? "h-48 lg:h-80" :
+                                    // l === 4 && i === 0 ? "h-72 col-span-3" :
+                                        l === 4 ? "h-48 lg:h-64" :
                                         l === 5 && (i === 0 || i === 4)   ? "h-72 row-span-1 col-span-3" :
                                             l === 6 && (i === 0 || i === 3 || i === 4) ? "h-72 col-span-2" :
                                                 l === 7 && i === 0 || l === 7 && i === 6 ? "h-72 col-span-2" :
-                                                    l === 8 && (i === 0 || i === 3 || i === 4 || i === 7)? "h-48 md:h-[17.9rem] md:col-span-2" :
+                                                    l === 8 && (i === 0 || i === 3 || i === 4 || i === 7)? "h-48 lg:h-[17.9rem] lg:col-span-2" :
                                                         l >= 9 && (i === 0 || i === 3 || i === 4 || i === 7) ?
                                                             "max-h-64 col-span-2" : null
                 } 
@@ -117,13 +117,14 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
         {/*mobile*/}
 
             <div className="rounded-md overflow-hidden relative block h-52 md:hidden">
-                <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '} absolute flex flex-col bottom-0 left-0  w-full h-full px-8`}>
-                    <div className="font-black text-3xl py-3">{item.label}</div>
-                    <div className="font-medium text-sm pt-2 pb-1">{
-                        item.description.split(" ").slice(0, 15).join(" ") + "..."
+                <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '} absolute flex flex-col bottom-0 left-0 w-full h-full`}>
+                    <div className={`${theme === 'light' ? "bg-mainlow_hover/10" : "bg-golden_bright/10"} shadow-lg backdrop-blur-3xl bg-opacity-20 h-full flex flex-col justify-center rounded-lg mx-4 my-4 px-6 gap-2`}>
+                    <div className="font-black text-3xl">{item.label.length > 12 ? item.label.split("").slice(0, 12).join("") + "..." : item.label}</div>
+                    <div className="font-medium text-sm">{
+                        item.description.split(" ").slice(0, 12).join(" ") + "..."
                     }</div>
                     <div className="flex justify-between items-center">
-                        <div className='flex gap-1 items-center gap-1'>
+                        <div className='flex gap-1 items-center'>
                             {
                                 item.technologies.length > 4 ? (
                                     item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
@@ -148,6 +149,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold`}>View Project</div>
                         </Link>
 
+                    </div>
                     </div>
                 </div>
                 <Image src={item.image_url ? item.image_url : Dummy} width={500} height={500} alt={item.label} className='object-cover w-full'/>

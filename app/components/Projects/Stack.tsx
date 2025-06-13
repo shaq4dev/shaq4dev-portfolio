@@ -22,7 +22,7 @@ export default function StackView(){
 
     const latestProjx = [...projects].reverse()
     const filteredProj = latestProjx.filter((i: ProjectProps) => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
-    const maxProject = filteredProj
+    const maxProject = filteredProj.slice(0, 1)
     const defaultProject = filteredProj.slice(0, 8)
 
     const l = maxProject.length
@@ -31,7 +31,7 @@ export default function StackView(){
 
     if(projectsError) return <div className={`${theme === 'light' ? "bg-red-100" : "bg-red-900/30"} h-96 rounded-lg text-red-500 flex justify-center items-center text-4xl  font-semibold mx-16 flex-col gap-4`}>
         <div className="">
-            <span className='underline'>Server Message</span>: An error occured while trying to fetch your projects.
+            <span className='underline'>Server Message</span>: An error occurred while trying to fetch your projects.
         </div>
         <div className='text-sm'>[{projectsError}]</div>
     </div>
@@ -51,14 +51,14 @@ export default function StackView(){
             <div className={
                 `${
                     l === 1 ? "grid-cols-1" :
-                        l === 2 ? "grid-cols-1 md:grid-cols-2" :
-                            l === 3 ? "grid-cols-1 md:grid-cols-2 md:grid-rows-2" :
-                                l === 4 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
-                                    l === 5 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
-                                        l === 6 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-2" :
-                                            l === 7 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-3" :
-                                                l === 8 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-4" :
-                                                    l >= 9 ? "grid-cols-1 md:grid-cols-3 md:grid-rows-4" : 
+                        l === 2 ? "grid-cols-1 lg:grid-cols-2" :
+                            l === 3 ? "grid-cols-1 lg:grid-cols-2 lg:grid-rows-2" :
+                                l === 4 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
+                                    l === 5 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
+                                        l === 6 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
+                                            l === 7 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-3" :
+                                                l === 8 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-4" :
+                                                    l >= 9 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-4" : 
                                                         null
                 } 
                 my-16 grid gap-3`
