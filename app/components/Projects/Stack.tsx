@@ -22,7 +22,7 @@ export default function StackView(){
 
     const latestProjx = [...projects].reverse()
     const filteredProj = latestProjx.filter((i: ProjectProps) => i.technologies.includes(stackList[current])) // when ready to make the filterable changes
-    const maxProject = filteredProj.slice(0, 1)
+    const maxProject = filteredProj
     const defaultProject = filteredProj.slice(0, 8)
 
     const l = maxProject.length
@@ -53,12 +53,12 @@ export default function StackView(){
                     l === 1 ? "grid-cols-1" :
                         l === 2 ? "grid-cols-1 lg:grid-cols-2" :
                             l === 3 ? "grid-cols-1 lg:grid-cols-2 lg:grid-rows-2" :
-                                l === 4 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
-                                    l === 5 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
-                                        l === 6 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" :
-                                            l === 7 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-3" :
-                                                l === 8 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-4" :
-                                                    l >= 9 ? "grid-cols-1 lg:grid-cols-3 lg:grid-rows-4" : 
+                                l === 4 ? "grid-cols-1 lg:grid-cols-4 lg:grid-rows-3" :
+                                    l === 5 ? "grid-cols-1 lg:grid-cols-4" :
+                                        l === 6 ? "grid-cols-1 lg:grid-cols-4 lg:grid-rows-2" :
+                                            l === 7 ? "grid-cols-1 lg:grid-cols-5 lg:grid-rows-3" :
+                                                l === 8 ? "grid-cols-1 lg:grid-cols-5 lg:grid-rows-4" :
+                                                    l >= 9 ? "grid-cols-1 lg:grid-cols-5 lg:grid-rows-4" : 
                                                         null
                 } 
                 my-16 grid gap-3`
