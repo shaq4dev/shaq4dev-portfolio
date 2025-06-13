@@ -5,9 +5,9 @@ const config: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'cdn.pixabay.com',
+                hostname: 's4dev-portfolio-bucket.s3.us-east-2.amazonaws.com',
                 port: '',
-                pathname: '/photo/**',
+                pathname: '/*',
                 search: '',
             },
         ],
