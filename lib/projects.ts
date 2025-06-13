@@ -3,7 +3,7 @@ export const projects = [
         id: "0",
         label: "Yassuh",
         url: "https://yassuh.com",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/yassuh-landing",
         projectType: "web",
         description:
             "A sleek website built with React.js, Next.js, and TypeScript, delivering a modern UI and smooth user experience. Designed for performance and accessibility, it ensures seamless navigation and interactivity.",
@@ -63,7 +63,7 @@ export const projects = [
         id: "6",
         label: "Yassuh Intl.",
         url: "https://yassuh-com.vercel.app/en",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/yassuh-landing",
         projectType: "web",
         description:
             "A multilingual version of Yassuh, using Next.js, Next Intl, and TypeScript for global accessibility. It offers seamless language support and an optimized user experience.",
@@ -73,7 +73,7 @@ export const projects = [
         id: "7",
         label: "Yassuh Intl. Design",
         url: "https://www.figma.com/proto/psue9ZfOQBSwrYUDHMWQR2/Yassuh-Landing---YPX?node-id=31-720&p=f&t=JFeyfCsdQ8uostaQ-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=31%3A720&show-proto-sidebar=1",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/yassuh-landing",
         projectType: "ux",
         description:
             "A UX/UI design project for Yassuh International, created in Figma with Photoshop and Illustrator assets. The design enhances brand identity with a cohesive and modern visual style. CODE: yassuh-landing-jul16",
