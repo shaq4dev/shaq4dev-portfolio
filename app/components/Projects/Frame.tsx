@@ -42,7 +42,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
             }>
                 <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '}
                   absolute flex flex-col w-full h-full`}>
-                    <div className={`${theme === 'light' ? "bg-mainlow_hover/10" : "bg-golden_bright/40"} shadow-lg backdrop-blur-3xl bg-opacity-20 h-full flex flex-col justify-center mx-8 my-8 py-6 px-6 rounded-3xl`}>
+                    <div className={`${theme === 'light' ? "bg-mainlow_hover/10" : "bg-golden_bright/10"} shadow-lg backdrop-blur-3xl bg-opacity-20 h-full flex flex-col justify-center mx-8 my-8 py-3 px-6 rounded-3xl gap-5`}>
 
                     <div className={`${
                         l === 1 ? "text-6xl" :
@@ -59,29 +59,29 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                                                                     l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-3xl" :
                                                                         ""
                     } font-black`}>{item.label}</div>
-                    {/*<div className={`${*/}
-                    {/*    l === 1 ? "text-2xl pb-5" :*/}
-                    {/*        ( l === 2 ) ? "text-xl pb-5" :*/}
-                    {/*            l === 3 ? "text-md pb-5" :*/}
-                    {/*                l === 4 && i === 0 ? "text-xl pb-2" :*/}
-                    {/*                    l === 4 ? "text-md pb-3" :*/}
-                    {/*                        l === 5 && (i === 0 || i === 4) ? "text-xl pb-2":*/}
-                    {/*                            l === 5 ? "text-md pb-3" :*/}
-                    {/*                                l === 6 && (i === 0 || i === 3 || i === 4) ? "text-md pb-3" :*/}
-                    {/*                                    l === 6 && (i === 1 || i === 2 || i === 5) ? "text-md pb-3" :*/}
-                    {/*                                        l === 7 && (i === 0 || i === 7 || i === 6) ? "text-md pb-3" :*/}
-                    {/*                                            l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "text-md pb-3" :*/}
-                    {/*                                                l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "text-md pb-3" :*/}
-                    {/*                                                    l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-md pb-3" :*/}
-                    {/*                                                        ""*/}
-                    {/*} font-medium`}>{*/}
-                    {/*    (*/}
-                    {/*        (l === 4 || l === 5) && (i === 1 || i === 2 || i === 3) ||*/}
-                    {/*        (l === 6 && (i === 1 || i === 2 || i === 5)) ||*/}
-                    {/*        (l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5)) ||*/}
-                    {/*        ( l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6))*/}
-                    {/*    ) ? item.description.split(" ").slice(0, 15).join(" ") + "..." : item.description*/}
-                    {/*}</div>*/}
+                    <div className={`${
+                        l === 1 ? "text-2xl" :
+                            ( l === 2 ) ? "text-xl" :
+                                l === 3 ? "text-md" :
+                                    l === 4 && i === 0 ? "text-lg" :
+                                        l === 4 ? "text-md" :
+                                            l === 5 && (i === 0 || i === 4) ? "text-xl":
+                                                l === 5 ? "text-md" :
+                                                    l === 6 && (i === 0 || i === 3 || i === 4) ? "text-md" :
+                                                        l === 6 && (i === 1 || i === 2 || i === 5) ? "text-md" :
+                                                            l === 7 && (i === 0 || i === 7 || i === 6) ? "text-md" :
+                                                                l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "text-md" :
+                                                                    l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "text-md" :
+                                                                        l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-md" :
+                                                                            ""
+                    } font-medium`}>{
+                        (
+                            (l === 4 || l === 5) && (i === 1 || i === 2 || i === 3) ||
+                            (l === 6 && (i === 1 || i === 2 || i === 5)) ||
+                            (l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5)) ||
+                            ( l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6))
+                        ) ? item.description.split(" ").slice(0, 10).join(" ") + "..." : item.description
+                    }</div>
                     <div className="flex justify-between items-center">
                         <div className='flex gap-1 items-center'>
                             {
