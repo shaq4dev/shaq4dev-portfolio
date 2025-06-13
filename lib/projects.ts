@@ -13,7 +13,7 @@ export const projects = [
         id: "1",
         label: "Bible Explosion Org",
         url: "https://biblexplosion.org",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
         projectType: "web",
         description:
             "A faith-based website built with Next.js, MongoDB, and Prisma to manage content and engage the community. It serves as a platform for biblical discussions, event updates, and spiritual resources.",
@@ -23,7 +23,7 @@ export const projects = [
         id: "2",
         label: "Bible Explosion Org",
         url: "https://www.figma.com/proto/2B1B3k53XHKYIywKrsfL1u?node-id=0-1&t=TxAWjDOfRIzJfhBw-6",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
         projectType: "ux",
         description:
             "A UX/UI design concept created in Figma for an intuitive and visually appealing experience. The design focuses on accessibility, clean layouts, and an engaging user interface.",
@@ -33,7 +33,7 @@ export const projects = [
         id: "3",
         label: "Tim Corporation",
         url: "https://timcorporation.net/",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
         projectType: "web",
         description:
             "A corporate website developed using WordPress, CSS, and Elementor Pro for a professional and flexible design. It provides a structured layout to enhance branding and company presence.",
@@ -53,7 +53,7 @@ export const projects = [
         id: "5",
         label: "Shaquille Blackwood",
         url: "https://github.com/shaq4dev/shaq4dev-portfolio",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing-gemini",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
         projectType: "web",
         description:
             "A personal portfolio website built with React.js, Next.js, and TypeScript to showcase projects and skills. Designed for smooth navigation, a clean UI, and engaging case studies.",
@@ -83,7 +83,7 @@ export const projects = [
         id: "8",
         label: "Carlton Pools",
         url: "https://www.figma.com/proto/Hubuch7id0HaY4A3sY7WgU/Carlton-Pools---Hero?node-id=0-3&p=f&t=wLiXlS9vzkR3jveu-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A3",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion",
         projectType: "ux",
         description:
             "Created for SwimSEO, with the target audience being Boomers to Gen X, my overall approach is to prioritize clarity, accessibility and ease of use. This will mean: The use of larger font sizes and high contrast text, The use of san-serif fonts, in this case it’s Roboto, for legibility...",

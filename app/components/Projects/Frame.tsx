@@ -42,21 +42,21 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
             }>
                 <div className={`${theme === 'light' ? ' text-light-primary bg-main/15 ' : ' text-light-primary bg-goldenlow_hover/15 '}
                   absolute flex flex-col w-full h-full`}>
-                    <div className={`${theme === 'light' ? "bg-mainlow_hover/20" : "bg-golden_bright/40"} shadow-lg backdrop-blur h-full flex flex-col justify-center mx-8 my-8 py-6 px-6 rounded-3xl`}>
+                    <div className={`${theme === 'light' ? "bg-mainlow_hover/10" : "bg-golden_bright/40"} shadow-lg backdrop-blur-3xl bg-opacity-20 h-full flex flex-col justify-center mx-8 my-8 py-6 px-6 rounded-3xl`}>
 
                     <div className={`${
-                        l === 1 ? "text-6xl pt-20 pb-12" :
-                            ( l === 2 || l === 3 ) ? "text-5xl pt-16 pb-10" :
-                                l === 4 && i === 0 ? "text-5xl pt-10 pb-8" :
-                                    l === 4 ? "text-3xl pt-10 pb-5" :
-                                        l === 5 && (i === 0 || i === 4) ? "text-5xl pt-10 pb-6" :
-                                            l === 5 ? "text-3xl pt-10 pb-5" :
-                                                l === 6 && (i === 0 || i === 3 || i === 4) ? "text-5xl pt-10 pb-6" :
-                                                    l === 6 && (i === 1 || i === 2 || i === 5) ? "text-3xl pt-10 pb-5" :
-                                                        l === 7 && (i === 0 || i === 7 || i === 6) ? "text-5xl pt-10 pb-6" :
-                                                            l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "text-3xl pt-10 pb-5" :
-                                                                l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "text-5xl pt-10 pb-6" :
-                                                                    l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-3xl pt-10 pb-5" :
+                        l === 1 ? "text-6xl" :
+                            ( l === 2 || l === 3 ) ? "text-5xl" :
+                                l === 4 && i === 0 ? "text-5xl" :
+                                    l === 4 ? "text-3xl" :
+                                        l === 5 && (i === 0 || i === 4) ? "text-5xl" :
+                                            l === 5 ? "text-3xl" :
+                                                l === 6 && (i === 0 || i === 3 || i === 4) ? "text-5xl" :
+                                                    l === 6 && (i === 1 || i === 2 || i === 5) ? "text-3xl" :
+                                                        l === 7 && (i === 0 || i === 7 || i === 6) ? "text-5xl" :
+                                                            l === 7 && (i === 1 || i === 2 || i === 3 || i === 4 || i === 5) ? "text-3xl" :
+                                                                l === 8 && (i === 0 ||  i === 3 || i === 4 || i === 7) ? "text-5xl" :
+                                                                    l === 8 && (i === 1 ||  i === 2 || i === 5 || i === 6) ? "text-3xl" :
                                                                         ""
                     } font-black`}>{item.label}</div>
                     {/*<div className={`${*/}
