@@ -3,6 +3,7 @@
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
 import {ModalContext} from "@/app/context/ModalContext";
+import {DetailIdContext} from "@/app/context/DetailContext";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { RxExternalLink } from "react-icons/rx";
 import Image from 'next/image'
@@ -15,9 +16,9 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
     const theme = useContext(ThemeContext)
     const {setModalToggle, setModalType} = useContext(ModalContext)
+    const {detailId, setDetailId} = useContext(DetailIdContext)
 
     if(item.url === 'undefined') return null
-    // console.log(l)
 
     console.log(item.image_url)
 
@@ -206,8 +207,9 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             <button onClick={() => {
                                 setModalToggle(true)
                                 setModalType("details")
+                                setDetailId(item.id)
                             }}>
-                                <div className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
+                                <div                                     className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
                                     <BsInfoCircleFill size={24} className={`${theme === 'light' ? "text-dark-primary hover:text-dark-primary/90" : "text-dark-primary"}`}/>
                                 </div>
                             </button>

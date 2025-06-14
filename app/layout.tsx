@@ -4,6 +4,7 @@ import Navigation from "./components/Nav/navigation";
 import BackToTop from "./components/Nav/backToTop";
 import GlobalTheme from '@/app/context/ThemeContext'
 import ModalProvider from "@/app/context/ModalContext";
+import DetailIdContextProvider from "@/app/context/DetailContext";
 
 export const metadata: Metadata = {
   title: "Shaquille Blackwood",
@@ -25,14 +26,17 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-
+    <DetailIdContextProvider>
     <ModalProvider>
       <GlobalTheme>
-            <Navigation />
-            {children}
-            <BackToTop />
+        <Navigation />
+
+                {children}
+
+        <BackToTop />
       </GlobalTheme>
     </ModalProvider>
+    </DetailIdContextProvider>
     </html>
   );
 }
