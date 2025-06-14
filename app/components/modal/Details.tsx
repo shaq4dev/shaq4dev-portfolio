@@ -51,7 +51,7 @@ export default function DetailsModal(){
                             {
                                 techStuff.map((item, _index) => (
                                     <div key={_index}>
-                                        <Image src={brandMap[item]} alt={item} width={300} height={300} className="w-6 h-6 rounded-full" />
+                                        <Image src={brandMap[item] || Dummy } alt={item} width={300} height={300} className="w-6 h-6 rounded-full" />
                                     </div>
                                 ))
                             }
