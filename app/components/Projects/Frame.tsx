@@ -2,6 +2,7 @@
 
 import {useContext} from 'react'
 import {ThemeContext} from "@/app/context/ThemeContext";
+import {ModalContext} from "@/app/context/ModalContext";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { RxExternalLink } from "react-icons/rx";
 import Image from 'next/image'
@@ -13,6 +14,7 @@ import Dummy from '@/public/dummy.jpg'
 export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
     const theme = useContext(ThemeContext)
+    const {setModalToggle, setModalType} = useContext(ModalContext)
 
     if(item.url === 'undefined') return null
     // console.log(l)
@@ -148,7 +150,10 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         </div>
 
                         <div className="action flex gap-2">
-                            <button onClick={() => alert('triggers "details" modal')}>
+                            <button onClick={() => {
+                                setModalToggle(true)
+                                setModalType("details")
+                            }}>
                                 <div className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
                                     <BsInfoCircleFill size={24} className={`${theme === 'light' ? "text-dark-primary hover:text-dark-primary/90" : "text-dark-primary"}`}/>
                                 </div>
@@ -197,9 +202,21 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             }
                         </div>
 
-                        <Link href={item.url} target='_blank'>
-                            <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold`}>View Project</div>
-                        </Link>
+                        <div className="action flex gap-2">
+                            <button onClick={() => {
+                                setModalToggle(true)
+                                setModalType("details")
+                            }}>
+                                <div className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
+                                    <BsInfoCircleFill size={24} className={`${theme === 'light' ? "text-dark-primary hover:text-dark-primary/90" : "text-dark-primary"}`}/>
+                                </div>
+                            </button>
+                            {/*<Link href={item.url} target='_blank'>*/}
+                            {/*    <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold flex gap-2 w-20 items-center justify-center`}>*/}
+                            {/*        View <span><RxExternalLink size={14} /></span>*/}
+                            {/*    </div>*/}
+                            {/*</Link>*/}
+                        </div>
 
                     </div>
                     </div>

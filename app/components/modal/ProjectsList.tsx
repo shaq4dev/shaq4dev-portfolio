@@ -12,10 +12,12 @@ import Link from "next/link";
 import {ThemeContext} from "@/app/context/ThemeContext";
 import {IdContext} from "@/app/context/IdContext";
 import {ProjectProps} from "@/lib/props";
+import {BsInfoCircleFill} from "react-icons/bs";
+import {RxExternalLink} from "react-icons/rx";
 
 export default function ProjectsListModal(){
 
-    const {modalToggle, setModalToggle} = useContext(ModalContext)
+    const {modalToggle, setModalToggle, setModalType} = useContext(ModalContext)
     const {data: projects = []} = useFetch('/api/projects')
     const theme = useContext(ThemeContext)
     const {id} = useContext(IdContext)
@@ -45,7 +47,7 @@ export default function ProjectsListModal(){
 
             <ul className='flex flex-col h-full gap-3 mx-6 my-8 overflow-y-scroll '>
                 {
-                    filteredProj.map((i: any, index: number) => <div key={index} className="w-full max-h-28 min-h-28 md:max-h-32 md:min-h-32 rounded-lg shadow-md overflow-hidden relative">
+                    filteredProj.map((i: any, index: number) => <div key={index} className="w-full max-h-36 min-h-36 md:max-h-40 md:min-h-40 rounded-lg shadow-md overflow-hidden relative">
                         <div className={`${theme === 'light' ? "bg-main" : "bg-golden"} backdrop-blur`}>
                             <Image src={i.image_url} alt={i.id} width={500} height={500} className={`${theme === 'light' ? "opacity-65" : "opacity-85"} bg-cover w-full`} />
                         </div>
@@ -77,9 +79,21 @@ export default function ProjectsListModal(){
                                     }
                                 </div>
 
-                                <Link href={i.url} target='_blank'>
-                                    <div className={`${theme === 'light' ? "hover:bg-main_hover bg-mainlow_hover" : "hover:bg-golden_hover bg-golden_hover"} rounded-md text-light-primary md:py-2 md:px-3 py-2 px-3 cursor-pointer  duration-200 text-sm font-semibold`}>View Project</div>
-                                </Link>
+                                <div className="action flex gap-2">
+                                    <button onClick={() => {
+                                        setModalToggle(true)
+                                        setModalType("details")
+                                    }}>
+                                        <div className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
+                                            <BsInfoCircleFill size={24} className={`${theme === 'light' ? "text-dark-primary hover:text-dark-primary/90" : "text-dark-primary"}`}/>
+                                        </div>
+                                    </button>
+                                    {/*<Link href={i.url} target='_blank'>*/}
+                                    {/*    <div className={`${theme === 'light' ? "bg-main hover:bg-main_hover" : "bg-golden_hover hover:bg-goldenlow_hover"}  rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold flex gap-2 w-24 items-center justify-center`}>*/}
+                                    {/*        View <span><RxExternalLink size={14} /></span>*/}
+                                    {/*    </div>*/}
+                                    {/*</Link>*/}
+                                </div>
                             </div>
                         </div>
                     </div>)

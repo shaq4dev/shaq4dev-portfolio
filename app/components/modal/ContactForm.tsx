@@ -137,8 +137,8 @@ export default function ContactForm() {
             {/* Success message */}
 
 
-            <form onSubmit={handleSubmit} className="w-full flex justify-center flex-col items-center px-6">
-                <div className={`py-6 inputitem flex flex-col gap-5 w-full`}>
+            <form onSubmit={handleSubmit} className={`${success ? "" : "py-8 lg:py-12"} w-full flex justify-center flex-col items-center px-6 duration-300`}>
+                <div className={`flex flex-col gap-2 lg:gap-4 w-full`}>
                     <div className="flex flex-col items-start w-full">
                         <input
                             name="firstname"
@@ -150,7 +150,7 @@ export default function ContactForm() {
                                 theme === "light"
                                     ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                                     : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                            } bg-light-primary/10 w-full px-3 outline-0 h-12 border-b duration-300`}
+                            } bg-light-primary/10 w-full px-3 outline-none h-10 lg:h-12 border-b duration-300`}
                         />
                         {errors.firstname && <p className="text-red-500 text-sm mt-1">{errors.firstname[0]}</p>}
                     </div>
@@ -166,7 +166,7 @@ export default function ContactForm() {
                                 theme === "light"
                                     ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                                     : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                            } bg-light-primary/10 w-full px-3 outline-0 h-12 border-b duration-300`}
+                            } bg-light-primary/10 w-full px-3 outline-none h-10 lg:h-12 border-b duration-300`}
                         />
                         {errors.lastname && <p className="text-red-500 text-sm mt-1">{errors.lastname[0]}</p>}
                     </div>
@@ -182,7 +182,7 @@ export default function ContactForm() {
                                 theme === "light"
                                     ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                                     : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                            } bg-light-primary/10 w-full px-3 outline-0 h-12 border-b duration-300`}
+                            } bg-light-primary/10 w-full px-3 outline-none h-10 lg:h-12 border-b duration-300`}
                         />
                         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>}
                     </div>
@@ -191,7 +191,7 @@ export default function ContactForm() {
                         <div className="flex flex-col items-start w-full">
                             <label
                                 htmlFor="company"
-                                className={`${theme === "light" ? "text-main" : "text-golden"} font-semibold`}
+                                className={`${theme === "light" ? "text-main" : "text-golden"} font-semibold pb-2`}
                             >
                                 Company
                             </label>
@@ -205,13 +205,13 @@ export default function ContactForm() {
                                     theme === "light"
                                         ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                                         : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                                } bg-light-primary/10 w-full px-3 outline-0 h-12 border-b duration-300`}
+                                } bg-light-primary/10 w-full px-3 outline-none h-10 lg:h-12 border-b duration-300`}
                             />
                         </div>
                         <div className="flex flex-col items-start w-full">
                             <label
                                 htmlFor="title"
-                                className={`${theme === "light" ? "text-main" : "text-golden"} font-semibold`}
+                                className={`${theme === "light" ? "text-main" : "text-golden"} font-semibold pb-2`}
                             >
                                 Title
                             </label>
@@ -225,7 +225,7 @@ export default function ContactForm() {
                                     theme === "light"
                                         ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                                         : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                                } bg-light-primary/10 w-full px-3 outline-0 h-12 border-b duration-300`}
+                                } bg-light-primary/10 w-full px-3 outline-none h-10 lg:h-12 border-b duration-300`}
                             />
                         </div>
                     </div>
@@ -240,14 +240,14 @@ export default function ContactForm() {
                     theme === "light"
                         ? "focus:border-main_hover focus:text-main border-main/10 placeholder:text-dark-primary/70 focus:placeholder:text-main"
                         : "focus:border-golden_hover focus:text-golden border-golden/10  placeholder:text-light-primary/70 focus:placeholder:text-golden"
-                } bg-light-primary/10 w-full px-3 py-3 outline-0 h-28 border-b duration-300`}
+                } bg-light-primary/10 w-full px-3 py-3 outline-none h-24 lg:h-28 border-b duration-300`}
             />
                         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message[0]}</p>}
                     </div>
                 </div>
 
                 {success && (
-                    <p className="text-green-600 font-semibold text-center w-full px-3 rounded-lg bg-green-500/30 py-4">
+                    <p className="text-green-600 font-semibold text-center w-full px-3 rounded-lg bg-green-500/30 py-4 mt-4">
                         Message sent successfully!
                     </p>
                 )}
@@ -259,7 +259,7 @@ export default function ContactForm() {
                         theme === "light"
                             ? "bg-main hover:bg-main_hover text-light-primary"
                             : "bg-golden hover:bg-golden_hover text-dark-primary"
-                    } duration-500 py-3 px-10 my-5 font-semibold rounded-md disabled:opacity-50 disabled:cursor-not-allowed`}
+                    } duration-500 py-3 px-10 my-3 font-semibold rounded-md disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
                     {isSending ? "Sending..." : "Send"}
                 </button>
