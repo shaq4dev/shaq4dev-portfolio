@@ -25,7 +25,8 @@ import illustrator from "@/public/brands/illustrator.png";
 import nextintl from "@/public/brands/nextintl.png";
 import vercel from "@/public/brands/vercel.png";
 import zod from '@/public/brands/zod.png'
-import nodemailer from '@/public/brands/nodemailer.jpg'
+import nodemailer from '@/public/brands/nodemailer.jpg';
+import authjs from '@/public/brands/authjs.png'
 
 const stackList = [
     'reactjs',
@@ -65,7 +66,8 @@ const brandMap: Record<string, any> = {
     nextintl,
     vercel,
     zod,
-    nodemailer
+    nodemailer,
+    authjs
 }
 
 const titles = ["React Js", "Next Js", "Mongo DB", "Javascript", "TypeScript", "Figma", "WordPress"]
