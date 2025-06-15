@@ -8,6 +8,7 @@ export type ProjectProps = {
   projectType: string;
   description: string;
   technologies: string[];
+  image_url?: string;
 };
 
 export type MenuProps = {

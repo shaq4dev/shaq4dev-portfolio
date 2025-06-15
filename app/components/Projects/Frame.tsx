@@ -16,7 +16,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
 
     const theme = useContext(ThemeContext)
     const {setModalToggle, setModalType} = useContext(ModalContext)
-    const {detailId, setDetailId} = useContext(DetailIdContext)
+    const {setDetailId} = useContext(DetailIdContext)
 
     if(item.url === 'undefined') return null
 
@@ -130,7 +130,11 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         `}>{item.description.split(" ").slice(0, 23).join(" ") + "..."}</div>
                     </div>
                     <div className="flex justify-between items-center">
-                        <div className='flex gap-1 items-center '>
+                        <div className='flex gap-1 items-center cursor-pointer' onClick={() => {
+                            setModalToggle(true)
+                            setModalType("details")
+                            setDetailId(item.id)
+                        }}>
                             {
                                 item.technologies.length > 3 ? (
                                     item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
@@ -171,7 +175,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                     </div>
             </div>
                 </div>
-                <Image src={item.image_url ? item.image_url : Dummy} width={500} height={500} alt={item.label} className='object-cover w-full'/>
+                <Image src={item.image_url || Dummy} width={500} height={500} alt={item.label} className='object-cover w-full'/>
             </div>
 
         {/*mobile*/}
@@ -184,18 +188,22 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                         item.description.split(" ").slice(0, 12).join(" ") + "..."
                     }</div>
                     <div className="flex justify-between items-center">
-                        <div className='flex gap-1 items-center'>
+                        <div className='flex gap-1 items-center cursor-pointer' onClick={() => {
+                            setModalToggle(true)
+                            setModalType("details")
+                            setDetailId(item.id)
+                        }}>
                             {
                                 item.technologies.length > 4 ? (
                                     item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                         {
-                                            <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
+                                            <Image src={brandMap[i] || Dummy} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                         }
                                     </div>).splice(0, 3)
                                 ) : (
                                     item.technologies.map((i: string, index: number) => <div key={index} className='py-4 flex gap-2'>
                                     {
-                                        <Image src={brandMap[i]} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
+                                        <Image src={brandMap[i] || Dummy} alt={item.label} className={`rounded-full w-6 h-6 bg-white`}/>
                                     }
                                 </div>)
                                 )
@@ -225,7 +233,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                     </div>
                     </div>
                 </div>
-                <Image src={item.image_url ? item.image_url : Dummy} width={500} height={500} alt={item.label} className='object-cover w-full'/>
+                <Image src={item.image_url || Dummy} width={500} height={500} alt={item.label} className='object-cover w-full'/>
             </div>
         </>
 

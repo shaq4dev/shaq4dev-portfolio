@@ -10,18 +10,20 @@ import {DetailIdContext} from "@/app/context/DetailContext";
 import {useFetch} from "@/app/hooks/useFetch";
 import Link from "next/link";
 import {brandMap} from "@/lib/stacklist";
+import {ProjectProps} from "@/lib/props";
 
 export default function DetailsModal(){
 
     const {setModalToggle, modalToggle} = useContext(ModalContext)
     const theme = useContext(ThemeContext)
     const {detailId} = useContext(DetailIdContext)
-    const {data: projects} = useFetch('/api/projects')
+    const {data: projects = []} = useFetch<ProjectProps[]>('/api/projects')
 
     // console.log(project)
     // console.log(detailId)
 
-    const project: any = projects.find(f => f.id === detailId)
+    //@ts-ignore
+    const project: ProjectProps = projects.find((f: ProjectProps) => f.id === detailId)
     if(!project) return null
 
     const techStuff: string[] = project.technologies
@@ -50,7 +52,7 @@ export default function DetailsModal(){
                             {
                                 techStuff.map((item, _index) => (
                                     <div key={_index}>
-                                        <Image src={brandMap[item] || Dummy } alt={item} width={300} height={300} className="w-6 h-6 rounded-full" />
+                                        <Image src={brandMap[item] || Dummy } alt={item} width={300} height={300} className="w-6 h-6 rounded-full bg-light-primary" />
                                     </div>
                                 ))
                             }
