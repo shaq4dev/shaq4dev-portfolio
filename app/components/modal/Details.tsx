@@ -25,7 +25,6 @@ export default function DetailsModal(){
     if(!project) return null
 
     const techStuff: string[] = project.technologies
-    console.log(techStuff)
 
     return (
         <>
@@ -37,7 +36,7 @@ export default function DetailsModal(){
                 <div className="relative">
                     <button
                         onClick={() => setModalToggle(!modalToggle)}
-                        className={`${theme === "light" ? "text-main" : "text-golden"} absolute right-10 top-5 text-white bg-dark-primary/70 rounded-full`}>
+                        className={`${theme === "light" ? "text-main" : "text-golden"} absolute right-6 top-5 text-white bg-dark-primary/70 rounded-full hover:opacity-80 duration-100`}>
                         <IoIosClose size={28} />
                     </button>
                     <Image src={typeof project.image_url === 'undefined' || null ? Dummy : project.image_url} alt={project.id} width={500} height={500} className='object-cover w-full h-48 md:h-72 lg:h-72 rounded-b-3xl shadow-lg'/>
@@ -58,7 +57,7 @@ export default function DetailsModal(){
                         </div>
                     </div>
                     <div className="flex justify-end">
-                        <Link href={project.url} className="visit bg-main w-24 text-white flex items-center justify-center h-10 rounded-lg">Visit</Link>
+                        <Link href={project.url} className={`${theme === 'light' ? "bg-main hover:bg-main_hover text-white" : "bg-golden_hover hover:bg-goldenlow_hover"} rounded-md py-2 px-3 cursor-pointer duration-200 font-semibold flex gap-2 w-28 items-center justify-center`}>Visit</Link>
                     </div>
                 </div>
             </div>

@@ -154,6 +154,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             <button onClick={() => {
                                 setModalToggle(true)
                                 setModalType("details")
+                                setDetailId(item.id)
                             }}>
                                 <div className="bg-light-primary hover:bg-light-primary/90  rounded-md p-2 cursor-pointer duration-200 font-semibold">
                                     <BsInfoCircleFill size={24} className={`${theme === 'light' ? "text-dark-primary hover:text-dark-primary/90" : "text-dark-primary"}`}/>
