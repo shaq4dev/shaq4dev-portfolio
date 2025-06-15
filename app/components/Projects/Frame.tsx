@@ -126,6 +126,7 @@ export default function Frame({l, i, item}: {l:number, i: number, item: any}){
                             (l === 1 || l === 2 || l === 3 || l === 4 || l === 5 || l === 6 || l === 7 || l === 8 ) ? "block xl:hidden" :
                                 null
                         }
+                        
                         `}>{item.description.split(" ").slice(0, 23).join(" ") + "..."}</div>
                     </div>
                     <div className="flex justify-between items-center">
