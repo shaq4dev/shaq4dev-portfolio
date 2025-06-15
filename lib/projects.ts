@@ -66,19 +66,8 @@ export const projects = [
         technologies: ["reactjs", "nextjs", "vercel", "typescript", "tailwindcss", "shadcnui"],
     },
     {
-        // december 2024
-        id: "6",
-        label: "biblexplosion.org",
-        url: "https://biblexplosion.org",
-        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
-        projectType: "web",
-        description:
-            "BibleExplosion.org is a full-stack community platform and event hub designed to support Bible Explosion Org’s weekly online Bible studies. Built from scratch, the platform combines an elegant, responsive design with a robust backend, serving both general visitors and core community members. Future iterations will introduce features like a blog, donation system via Stripe, and a resource library — all built in an agile, iterative process. I handled the full development lifecycle: from database schema and authentication logic to UI/UX design and deployment. The platform features dynamic user and admin dashboards, media integration, and tailored navigation flows. I implemented multiple error handling states and built a scalable architecture to support future growth. The design of the landing page is one of my proudest UI accomplishments, matching the original vision I had for a clean, non-denominational, welcoming faith-based platform. Although not publicly launched yet, internal testing with stakeholders has returned overwhelmingly positive feedback, affirming both the user experience and technical reliability.",
-        technologies: ["nextjs", "authjs", "vercel", "reactjs", "mongodb", "prisma", "firebase", "typescript", "mongoose"],
-    },
-    {
         // february 2025
-        id: "7",
+        id: "6",
         label: "Shaquille Blackwood",
         url: "https://first-portfolio-design.vercel.app/",
         image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/portfolio-feb-2025",
@@ -86,6 +75,17 @@ export const projects = [
         description:
             "My very first personal portfolio was built to serve two key purposes: to consolidate all my past and current projects in one easy-to-update platform, and to provide a professional space I could confidently share during my job search. I focused on a colorful but minimal design, subtly showcasing my UI/UX capabilities while maintaining a strong front-end development emphasis. The site featured a categorized project showcase (web & UX/UI), a concise personal bio, and a breakdown of my tech stack. I even included a profile image to make the experience more personable and relatable. While working solo on this project, I faced some early hurdles around state management that limited a few design ideas I initially wanted to implement. However, the process turned out to be a great learning experience—I refined my React skills significantly, especially around the useEffect hook and component reuse. The feedback I received from friends and family was encouraging and constructive. It affirmed the design's approachability while helping me recognize areas where I could push further in future versions. I'm most proud that I shipped something functional and visually thoughtful while deepening my technical skills—laying a strong foundation for my next iteration.",
         technologies: ["reactjs", "nextjs", "typescript", "tailwindcss", "vercel"],
+    },
+    {
+        // may 2024
+        id: "7",
+        label: "biblexplosion.org",
+        url: "https://biblexplosion.org",
+        image_url: "https://s4dev-portfolio-bucket.s3.us-east-2.amazonaws.com/biblexplosion-landing",
+        projectType: "web",
+        description:
+            "BibleExplosion.org is a full-stack community platform and event hub designed to support Bible Explosion Org’s weekly online Bible studies. Built from scratch, the platform combines an elegant, responsive design with a robust backend, serving both general visitors and core community members. Future iterations will introduce features like a blog, donation system via Stripe, and a resource library — all built in an agile, iterative process. I handled the full development lifecycle: from database schema and authentication logic to UI/UX design and deployment. The platform features dynamic user and admin dashboards, media integration, and tailored navigation flows. I implemented multiple error handling states and built a scalable architecture to support future growth. The design of the landing page is one of my proudest UI accomplishments, matching the original vision I had for a clean, non-denominational, welcoming faith-based platform. Although not publicly launched yet, internal testing with stakeholders has returned overwhelmingly positive feedback, affirming both the user experience and technical reliability.",
+        technologies: ["nextjs", "authjs", "vercel", "reactjs", "mongodb", "prisma", "firebase", "typescript", "mongoose"],
     },
     {
         // march 2025
